@@ -48,3 +48,16 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+gem 'gameday_api'
+
+gem 'hpricot'
+
+gem 'rspec-rails'
+
+gem 'nokogiri'
+
+gem 'httparty'
+
+gem 'angularjs-rails'
