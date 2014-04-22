@@ -13,4 +13,13 @@ class Game < ActiveRecord::Base
 		game.save!
 	end
 
+	def self.most_recent
+		date = Game.order(game_date: :desc).first.game_date
+		Game.where(game_date: date)
+	end
+
+	def worst_call
+		pitches.max_by(&:total_distance_missed)
+	end
+
 end

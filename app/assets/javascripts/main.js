@@ -8,6 +8,10 @@ main.config(function($routeProvider) {
 			templateUrl: 'templates/index.html',
 			controller: 'IndexController'
 		}).
+		when('/games/date/:year/:month/:day', {
+			templateUrl: 'templates/games.html',
+			controller: 'GameController'
+		}).
 		otherwise({
 			redirectTo: '/'
 		})
