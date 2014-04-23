@@ -13,6 +13,34 @@ class Game < ActiveRecord::Base
 		game.save!
 	end
 
+	def self.set_calls(game)
+    pitches = game.pitches
+
+    unless game.correct_calls
+	    correct_calls = pitches.where(correct_call: true).count
+	    game.correct_calls = correct_calls
+	  end
+
+	  unless game.incorrect_calls 
+	    incorrect_calls = pitches.where(correct_call: false).count
+	    game.incorrect_calls = incorrect_calls
+	  end
+
+	  unless game.total_calls
+			total_calls = correct_calls + incorrect_calls
+			game.total_calls = total_calls
+		end
+
+    game.save!
+	end
+
+	def self.set_team(game)
+		teams = game.teams
+		game.home_team_abbrev = teams.first.abbreviation
+		game.away_team_abbrev = teams.last.abbreviation
+		game.save!
+	end
+
 	def self.most_recent
 		date = Game.order(game_date: :desc).first.game_date
 		Game.where(game_date: date)

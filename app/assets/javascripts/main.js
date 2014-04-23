@@ -12,6 +12,14 @@ main.config(function($routeProvider) {
 			templateUrl: 'templates/games.html',
 			controller: 'GameController'
 		}).
+		when('/umpires', {
+			templateUrl: 'templates/umpires.html',
+			controller: 'UmpireController'
+		}).
+		when('/umpires/:id', {
+			templateUrl: 'templates/umpire_show.html',
+			controller: 'UmpireShowController'
+		}).
 		otherwise({
 			redirectTo: '/'
 		})

@@ -1,0 +1,24 @@
+<h1>2013 Umpire Rankings</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Umpire</th>
+			<th>Correct Calls (%)</th>
+			<th>Total Correct Calls</th>
+			<th>Total Incorrect Calls</th>
+			<th>Total Calls</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="umpire in umpires">
+			<td><a href='#/umpires/{{umpire.id}}'>{{umpire.name}}</a></td>
+			<td>{{umpire.correctCallPercent}}</td>
+			<td>{{umpire.correctCalls}}</td>
+			<td>{{umpire.incorrectCalls}}</td>
+			<td>{{umpire.totalCalls}}</td>
+		</tr>
+	</tbody>
+</table>
+
+{{umpires}}

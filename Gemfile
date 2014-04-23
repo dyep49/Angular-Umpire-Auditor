@@ -61,3 +61,4 @@ gem 'nokogiri'
 gem 'httparty'
 
 gem 'angularjs-rails'
+

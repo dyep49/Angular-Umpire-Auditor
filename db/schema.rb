@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422055116) do
+ActiveRecord::Schema.define(version: 20140422233702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 20140422055116) do
     t.integer  "mlb_umpire_id"
     t.integer  "umpire_id"
     t.datetime "game_date"
+    t.integer  "total_calls"
+    t.integer  "correct_calls"
+    t.integer  "incorrect_calls"
+    t.string   "home_team_abbrev"
+    t.string   "away_team_abbrev"
   end
 
   create_table "games_teams", force: true do |t|
