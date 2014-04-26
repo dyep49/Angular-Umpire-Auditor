@@ -3,14 +3,11 @@ class GamesController < ApplicationController
 
 def show
 	date = "#{params[:year]}-#{params[:month]}-#{params[:day]}"
-	games = Game.where(game_date: date)
-	game = games.max_by(&:worst_call)
-	worst_call = game.worst_call
-	umpire = game.umpire
-	teams = game.teams
+	day = Day.find_by(game_date: Date.parse(date))
 
-	render json: {homeTeam: teams.first, awayTeam: teams.last, game: game, pitch: worst_call, umpire: umpire}
+	render json: {homeTeam: day.home_team, awayTeam: day.away_team, game: day.game_date, pitch: day.total_distance_missed, umpire: day.umpire}
 end
 
 
 end
+
