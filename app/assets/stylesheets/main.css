@@ -1,1 +1,5 @@
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.body-wrapper {
+	margin-top: 5em;
+}

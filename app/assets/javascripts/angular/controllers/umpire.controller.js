@@ -5,11 +5,4 @@ main.controller('UmpireController', ['$scope', 'Umpire', function($scope, Umpire
 		$scope.umpires = data
 	})
 
-
-
-
-
-
-
-
 }])

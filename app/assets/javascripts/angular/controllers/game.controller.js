@@ -9,6 +9,7 @@ main.controller('GameController', ['$scope','$routeParams', 'Game', function($sc
 		$scope.awayTeam = data.awayTeam
 		$scope.pitch = data.pitch
 		$scope.umpire = data.umpire
+		$scope.umpireId = data.umpire_id
 		$scope.game = data.game
 		}
 	)

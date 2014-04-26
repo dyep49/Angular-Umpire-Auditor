@@ -9,7 +9,7 @@ def show
 	umpire = Umpire.find(params[:id])
 	games = umpire.games
 
-	render json: games
+	render json: {games: games, umpire: umpire}
 end
 
 

@@ -15,9 +15,9 @@
 
 
 <h1>The Worst Call of the Day</h1>
-<h2>{{game.game_date}}</h2>
+<h2>{{game | date : 'longDate'}}</h2>
 <h2>Belongs To</h2>
-<h1>{{umpire.name}}</h1>
-<h2>{{homeTeam.full_name}} vs. {{awayTeam.full_name}}</h2>
+<h1>{{umpire}}</h1>
+<h2>{{homeTeam}} vs. {{awayTeam}}</h2>
 
-<p>Umpire {{umpire.name}} called a strike on a pitch that missed the strike zone by {{pitch.total_distance_missed}} feet</p>
+<p>Umpire {{umpire}} called a strike on a pitch that missed the strike zone by {{pitch}} feet</p>

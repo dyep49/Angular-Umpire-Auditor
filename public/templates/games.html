@@ -1,7 +1,7 @@
 <h1>The Worst Call of the Day</h1>
-<h2>{{game}}</h2>
+<h2>{{game | date : 'longDate'}}</h2>
 <h2>Belongs To</h2>
-<h1>{{umpire}}</h1>
+<h1><a href="/#/umpires/{{umpireId}}">{{umpire}}</a></h1>
 <h2>{{homeTeam}} vs. {{awayTeam}}</h2>
 
 <p>Umpire {{umpire}} called a strike on a pitch that missed the strike zone by {{pitch}} feet</p>

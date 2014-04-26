@@ -24,4 +24,13 @@ module CreateAssociations
 	  end
 	end
 
+	def self.day_umpire_id(days)
+		days.each do |day|
+			umpire_name = day.umpire
+			umpire = Umpire.find_by(name: umpire_name).id
+			day.umpire_id = umpire 
+			day.save!
+		end
+	end
+
 end

@@ -13,7 +13,6 @@ main.controller('IndexController', ['$scope', '$location', 'Game', function($sco
 	$scope.today = Date()
 
   $scope.disabled = function(date, mode) {
-  	debugger
     return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
   };
 

@@ -4,13 +4,9 @@ def index
 end
 
 def worst_call
-	games = Game.most_recent
-	game = games.max_by(&:worst_call)
-	worst_call = game.worst_call
-	umpire = game.umpire
-	teams = game.teams
+	day = Day.most_recent
 
-	render json: {homeTeam: teams.first, awayTeam: teams.last, game: game, pitch: worst_call, umpire: umpire}
+	render json: {homeTeam: day.home_team, awayTeam: day.away_team, game: day.game_date, pitch: day.total_distance_missed, umpire: day.umpire}
 end
 
 

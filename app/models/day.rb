@@ -1,5 +1,9 @@
 class Day < ActiveRecord::Base
 
+	def self.most_recent
+		day = Day.order(game_date: :desc).first
+	end
+
 	def self.create_days(games)
 		games.each do |game|
 			begin

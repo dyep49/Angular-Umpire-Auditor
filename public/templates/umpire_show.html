@@ -1,4 +1,6 @@
-<table>
+<h1>{{umpire.name}}</h1>
+
+<table class="table">
 	<thead>
 		<tr>
 			<th>Date</th>
@@ -11,7 +13,7 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="game in games">
-			<td>{{game.game_date}}</td>
+			<td>{{game.game_date | date : 'longDate'}}</td>
 			<td>{{game.home_team_abbrev}} vs. {{game.away_team_abbrev}}</td>
 			<td>{{game.correct_calls * 100 / game.total_calls}}</td>
 			<td>{{game.correct_calls}}</td>
@@ -20,4 +22,3 @@
 		</tr>
 	</tbody>
 </table>
-
