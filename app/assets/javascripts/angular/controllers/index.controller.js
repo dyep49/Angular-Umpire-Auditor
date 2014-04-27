@@ -6,6 +6,7 @@ main.controller('IndexController', ['$scope', '$location', 'Game', function($sco
 		$scope.pitch = data.pitch
 		$scope.umpire = data.umpire
 		$scope.game = data.game
+		$scope.umpireId = data.umpire_id
 	})
 
 	$scope.dt = null

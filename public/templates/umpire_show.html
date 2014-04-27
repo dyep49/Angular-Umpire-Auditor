@@ -1,21 +1,24 @@
 <h1>{{umpire.name}}</h1>
 
-<table class="table">
+
+Search Table: <input ng-model="query">
+
+<table class="table" ts-wrapper>
 	<thead>
 		<tr>
-			<th>Date</th>
-			<th>Game</th>
-			<th>Calls Correct (%)</th>
-			<th>Correct Calls</th>
-			<th>Incorrect Calls</th>
-			<th>Total Calls</th>
+			<th ts-criteria="game_date|parseDate">Date</th>
+			<th ts-criteria="home_team_abbrev">Game</th>
+			<th ts-criteria="percent_correct">Calls Correct (%)</th>
+			<th ts-criteria="correct_calls|parseInt">Correct Calls</th>
+			<th ts-criteria="incorrect_calls|parseInt">Incorrect Calls</th>
+			<th ts-criteria="total_calls|parseInt">Total Calls</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="game in games">
-			<td>{{game.game_date | date : 'longDate'}}</td>
+		<tr ng-repeat="game in games|filter:query" ts-repeat>
+			<td>{{game.game_date}}</td>
 			<td>{{game.home_team_abbrev}} vs. {{game.away_team_abbrev}}</td>
-			<td>{{game.correct_calls * 100 / game.total_calls}}</td>
+			<td>{{game.percent_correct | number:2}}</td>
 			<td>{{game.correct_calls}}</td>
 			<td>{{game.incorrect_calls}}</td>
 			<td>{{game.total_calls}}</td>

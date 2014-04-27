@@ -1,19 +1,20 @@
 <h1>2013 Umpire Rankings</h1>
 
-<table class="table">
+Search Table: <input ng-model="query">
+<table class="table table-striped table-hover table-responsive" ts-wrapper>
 	<thead>
 		<tr>
-			<th>Umpire</th>
-			<th>Correct Calls (%)</th>
-			<th>Total Correct Calls</th>
-			<th>Total Incorrect Calls</th>
-			<th>Total Calls</th>
+			<th ts-criteria="name">Umpire</th>
+			<th ts-criteria="correctCallPercent">Correct Calls (%)</th>
+			<th ts-criteria="correctCalls|parseInt">Total Correct Calls</th>
+			<th ts-criteria="incorrectCalls|parseInt">Total Incorrect Calls</th>
+			<th ts-criteria="totalCalls|parseInt">Total Calls</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="umpire in umpires">
+		<tr ng-repeat="umpire in umpires|filter:query" ts-repeat>
 			<td><a href='#/umpires/{{umpire.id}}'>{{umpire.name}}</a></td>
-			<td>{{umpire.correctCallPercent}}</td>
+			<td>{{umpire.correctCallPercent | number:2}}</td>
 			<td>{{umpire.correctCalls}}</td>
 			<td>{{umpire.incorrectCalls}}</td>
 			<td>{{umpire.totalCalls}}</td>
@@ -21,4 +22,3 @@
 	</tbody>
 </table>
 
-{{umpires}}

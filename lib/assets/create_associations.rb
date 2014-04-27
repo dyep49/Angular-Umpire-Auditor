@@ -33,4 +33,15 @@ module CreateAssociations
 		end
 	end
 
+	def self.game_percent_correct(games)
+		games.each do |game|
+			begin
+				game.percent_correct = (game.correct_calls.to_f / game.total_calls) * 100
+				game.save!
+			rescue
+				puts "RESCUED"
+			end
+		end
+	end
+
 end

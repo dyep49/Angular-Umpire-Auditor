@@ -1,3 +1,16 @@
+<div class="row">
+    <div class="col-md-6">
+        <p class="input-group">
+          <input type="text" class="form-control" datepicker-popup="" ng-model="dt" max="today" show-weeks="false" datepicker-options="{{dateOptions}}" date-disabled="disabled(date, mode)" is-open="opened" close-text="Close" />
+          <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+    </div>
+</div>
+
+<button class='btn' ng-show="dt" ng-click="submitDate()">Submit</button>
+
 <h1>The Worst Call of the Day</h1>
 <h2>{{game | date : 'longDate'}}</h2>
 <h2>Belongs To</h2>

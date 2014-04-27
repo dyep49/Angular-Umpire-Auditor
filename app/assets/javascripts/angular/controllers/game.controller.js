@@ -1,4 +1,4 @@
-main.controller('GameController', ['$scope','$routeParams', 'Game', function($scope, $routeParams, Game) {
+main.controller('GameController', ['$scope','$routeParams', '$location', 'Game', function($scope, $routeParams, $location, Game) {
 
 	var year = $routeParams.year
 	var month = $routeParams.month
@@ -13,6 +13,26 @@ main.controller('GameController', ['$scope','$routeParams', 'Game', function($sc
 		$scope.game = data.game
 		}
 	)
+
+	$scope.dt = null
+
+	$scope.today = Date()
+
+  $scope.disabled = function(date, mode) {
+    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+  };
+
+
+	$scope.submitDate = function() {
+		date = $scope.dt
+		if(date) {
+			year = date.getFullYear()
+			month = date.getMonth()
+			day = date.getDay()
+			$location.path('/games/date/' + year + '/' + month + '/' + day)			
+		}
+	}
+
 
 
 }])

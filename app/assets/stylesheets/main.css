@@ -3,3 +3,12 @@
 .body-wrapper {
 	margin-top: 5em;
 }
+
+th:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.showIfLast {
+	display: none;
+}

@@ -17,6 +17,7 @@
 //= require angular-route
 //= require angular-animate
 //= require ui.bootstrap
+//= require tablesorter
 //= require main.js
 //= require_tree ./angular
 //= require_tree .
