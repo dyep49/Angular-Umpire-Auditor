@@ -6,7 +6,7 @@ Search Table: <input ng-model="query">
 <table class="table" ts-wrapper>
 	<thead>
 		<tr>
-			<th ts-criteria="game_date|parseDate">Date</th>
+			<th ts-criteria="game_date|parseDate" ts-default="descending">Date</th>
 			<th ts-criteria="home_team_abbrev">Game</th>
 			<th ts-criteria="percent_correct">Calls Correct (%)</th>
 			<th ts-criteria="correct_calls|parseInt">Correct Calls</th>
