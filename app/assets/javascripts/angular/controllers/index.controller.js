@@ -1,4 +1,6 @@
-main.controller('IndexController', ['$scope', '$location', 'Game', function($scope, $location, Game) {
+main.controller('IndexController', ['$scope', '$location', 'Game', 'Day', function($scope, $location, Game, Day) {
+
+	var dateArray = []
 
 	Game.worstCall(function(data) {
 		$scope.homeTeam = data.homeTeam
@@ -9,13 +11,21 @@ main.controller('IndexController', ['$scope', '$location', 'Game', function($sco
 		$scope.umpireId = data.umpire_id
 	})
 
+	Day.all().then(function(data) {
+		data.forEach(function(date) {
+			dateArray.push(date)
+		})
+	  $scope.disabled = function(date, mode) {
+	  	var gameDate = new Date(date)
+	  	var parsedDate = '' + gameDate.getYear() + '' + gameDate.getMonth() + '' + gameDate.getDate()
+	    return ( mode === 'day' && (dateArray.indexOf(parsedDate) === -1));
+	  };
+	})
+
 	$scope.dt = null
 
 	$scope.today = Date()
 
-  $scope.disabled = function(date, mode) {
-    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
-  };
 
 
 	$scope.submitDate = function() {

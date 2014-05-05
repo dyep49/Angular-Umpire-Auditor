@@ -5,7 +5,7 @@ Search Table: <input ng-model="query">
 	<thead>
 		<tr>
 			<th ts-criteria="name">Umpire</th>
-			<th ts-criteria="correctCallPercent">Correct Calls (%)</th>
+			<th ts-criteria="correctCallPercent" ts-default="descending">Correct Calls (%)</th>
 			<th ts-criteria="correctCalls|parseInt">Total Correct Calls</th>
 			<th ts-criteria="incorrectCalls|parseInt">Total Incorrect Calls</th>
 			<th ts-criteria="totalCalls|parseInt">Total Calls</th>
