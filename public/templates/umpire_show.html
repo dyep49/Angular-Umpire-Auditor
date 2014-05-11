@@ -16,7 +16,7 @@ Search Table: <input ng-model="query">
 	</thead>
 	<tbody>
 		<tr ng-repeat="game in games|filter:query" ts-repeat>
-			<td>{{game.game_date}}</td>
+			<td>{{game.game_date | timezone | date: 'longDate'}}</td>
 			<td>{{game.home_team_abbrev}} vs. {{game.away_team_abbrev}}</td>
 			<td>{{game.percent_correct | number:2}}</td>
 			<td>{{game.correct_calls}}</td>

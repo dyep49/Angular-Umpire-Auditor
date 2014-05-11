@@ -5,7 +5,7 @@ main.controller('IndexController', ['$scope', '$location', 'Game', 'Day', functi
 	Game.worstCall(function(data) {
 		$scope.homeTeam = data.homeTeam
 		$scope.awayTeam = data.awayTeam
-		$scope.pitch = data.pitch
+		$scope.pitch = data.pitch * 12
 		$scope.umpire = data.umpire
 		$scope.game = data.game
 		$scope.umpireId = data.umpire_id
@@ -18,7 +18,7 @@ main.controller('IndexController', ['$scope', '$location', 'Game', 'Day', functi
 	  $scope.disabled = function(date, mode) {
 	  	var gameDate = new Date(date)
 	  	var parsedDate = '' + gameDate.getYear() + '' + gameDate.getMonth() + '' + gameDate.getDate()
-	    return ( mode === 'day' && (dateArray.indexOf(parsedDate) === -1));
+	    return ( mode === 'day' && (dateArray.indexOf(parsedDate) != -1));
 	  };
 	})
 

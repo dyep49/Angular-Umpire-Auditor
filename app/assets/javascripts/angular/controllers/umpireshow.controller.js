@@ -3,7 +3,7 @@ main.controller('UmpireShowController', ['$scope', 'Umpire', '$routeParams', '$f
 	Umpire.show($routeParams.id, function(data){
 		var games = data.games
 		games.forEach(function(game) {
-			game.game_date = $filter('date')(game.game_date, 'longDate')
+			// game.game_date = $filter('date')(game.game_date, 'longDate')
 		})
 		
 		$scope.games = data.games
