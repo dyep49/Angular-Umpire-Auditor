@@ -2,6 +2,7 @@ class CreatePitches < ActiveRecord::Migration
   def change
     create_table :pitches do |t|
       t.string :gid
+      t.datetime :date_string
       t.string :description
       t.integer :pid
       t.float :x_location
@@ -19,7 +20,6 @@ class CreatePitches < ActiveRecord::Migration
       t.integer :mlb_umpire_id
       t.integer :batter_id
       t.integer :game_id
-      # t.timestamps
     end
   end
 end

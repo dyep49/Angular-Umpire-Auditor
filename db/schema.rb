@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426235716) do
+ActiveRecord::Schema.define(version: 20140426054823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20140426235716) do
     t.string   "home_team"
     t.string   "away_team"
     t.float    "total_distance_missed"
+    t.integer  "umpire_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "umpire_id"
   end
 
   create_table "favorites", force: true do |t|
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20140426235716) do
     t.integer  "team_id"
     t.integer  "pitcher_id"
     t.integer  "umpire_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "games", force: true do |t|
@@ -60,41 +60,43 @@ ActiveRecord::Schema.define(version: 20140426235716) do
     t.string   "name"
     t.string   "team"
     t.integer  "pid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "pitches", force: true do |t|
-    t.string  "gid"
-    t.string  "date_string"
-    t.string  "description"
-    t.integer "pid"
-    t.float   "x_location"
-    t.float   "y_location"
-    t.float   "sz_top"
-    t.float   "sz_bottom"
-    t.string  "sv_id"
-    t.string  "type_id"
-    t.boolean "correct_call"
-    t.float   "distance_missed_x",     default: 0.0
-    t.float   "distance_missed_y",     default: 0.0
-    t.float   "total_distance_missed", default: 0.0
-    t.boolean "missing_data"
-    t.integer "pitcher_id"
-    t.integer "mlb_umpire_id"
-    t.integer "batter_id"
-    t.integer "game_id"
+    t.string   "gid"
+    t.datetime "date_string"
+    t.string   "description"
+    t.integer  "pid"
+    t.float    "x_location"
+    t.float    "y_location"
+    t.float    "sz_top"
+    t.float    "sz_bottom"
+    t.string   "sv_id"
+    t.string   "type_id"
+    t.boolean  "missing_data"
+    t.boolean  "correct_call"
+    t.float    "distance_missed_x",     default: 0.0
+    t.float    "distance_missed_y",     default: 0.0
+    t.float    "total_distance_missed", default: 0.0
+    t.integer  "pitcher_id"
+    t.integer  "mlb_umpire_id"
+    t.integer  "batter_id"
+    t.integer  "game_id"
   end
 
   create_table "teams", force: true do |t|
-    t.integer "team_id"
-    t.string  "abbreviation"
-    t.string  "full_name"
-    t.integer "division_id"
-    t.integer "league_id"
-    t.string  "code"
-    t.string  "city"
-    t.string  "name_brief"
+    t.integer  "team_id"
+    t.string   "abbreviation"
+    t.string   "full_name"
+    t.integer  "division_id"
+    t.integer  "league_id"
+    t.string   "code"
+    t.string   "city"
+    t.string   "name_brief"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "umpires", force: true do |t|
@@ -115,8 +117,8 @@ ActiveRecord::Schema.define(version: 20140426235716) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

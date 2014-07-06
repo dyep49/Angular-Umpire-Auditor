@@ -6,7 +6,13 @@ class CreateGames < ActiveRecord::Migration
       t.string :gid
       t.integer :mlb_umpire_id
       t.integer :umpire_id
-      t.timestamps
+      t.datetime :game_date
+      t.integer :total_calls
+      t.integer :correct_calls
+      t.integer :incorrect_calls
+      t.string :home_team_abbrev
+      t.string :away_team_abbrev
+      t.float :percent_correct
     end
   end
 end

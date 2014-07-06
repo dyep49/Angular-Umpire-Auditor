@@ -6,7 +6,7 @@ class CreateDays < ActiveRecord::Migration
       t.string :home_team
       t.string :away_team
       t.float :total_distance_missed
-
+      t.integer :umpire_id
       t.timestamps
     end
   end
