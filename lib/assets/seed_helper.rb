@@ -98,6 +98,11 @@ module SeedHelper
 			new_pitch.sv_id = pitch_attrs[:sv_id]
 			new_pitch.type_id = pitch_attrs[:type_id]
 			new_pitch.missing_data = pitch_attrs[:missing_data]
+			new_pitch.inning_half = pitch_attrs[:inning_half]
+			new_pitch.inning = pitch_attrs[:inning]
+			new_pitch.ball_count = pitch_attrs[:ball_count]
+			new_pitch.strike_count = pitch_attrs[:strike_count]
+			new_pitch.outs = pitch_attrs[:outs]
 			if (new_pitch.sz_top && (new_pitch.description == "Called Strike" || new_pitch.description == "Ball"))
 				new_pitch.correct_call = new_pitch.correct_call? 
 				if new_pitch.description == "Called Strike"

@@ -18,7 +18,12 @@ class Day < ActiveRecord::Base
 						umpire: umpire.name,
 						home_team: teams.first.full_name,
 						away_team: teams.last.full_name,
-						total_distance_missed: worst_call.total_distance_missed
+						total_distance_missed: worst_call.total_distance_missed,
+						inning: worst_call.inning,
+						ball_count: worst_call.ball_count,
+						strike_count: worst_call.strike_count,
+						outs: worst_call.outs,
+						inning_half: worst_call.inning_half
 					)
 				end
 			rescue
@@ -29,5 +34,5 @@ class Day < ActiveRecord::Base
 
 end
 
-
+##ADD THE COUNT AND OUTS AND INNING 
 
