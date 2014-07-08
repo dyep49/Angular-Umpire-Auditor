@@ -24,4 +24,43 @@ class Umpire < ActiveRecord::Base
     umpire_array
   end
 
+  def self.update_ranking
+    file_path = "#{Rails.root}/public/csvs/tmp_umpire_rank.csv"
+    Umpire.all.each do |umpire|
+      CSV.open(file_path, "a") do |csv|
+        call_hash = umpire.evaluate(umpire.games)
+        csv << [umpire.name, call_hash[:correct_calls], call_hash[:incorrect_calls], call_hash[:total_calls]]
+      end
+    end
+    File.rename(file_path, "#{Rails.root}/public/csvs/umpire_rank.csv")
+  end
+
+  def self.update_year_ranking(year)
+    file_path = "#{Rails.root}/public/csvs/tmp_umpire_rank_#{year}.csv}"
+    Umpire.all.each do |umpire|
+      CSV.open(file_path, "a") do |csv|
+        games = umpire.games.select {|game| game.game_date.year == year}
+        call_hash = umpire.evaluate(games)
+        unless call_hash[:total_calls] == 0
+          csv << [umpire.name, call_hash[:correct_calls], call_hash[:incorrect_calls], call_hash[:total_calls]]
+        end
+      end
+    end
+    File.rename(file_path, "#{Rails.root}/public/csvs/umpire_rank_#{year}.csv")
+  end
+
+  def evaluate(games)
+    total_calls = 0
+    correct_calls = 0
+    incorrect_calls = 0
+    games.each do |game|
+      total_calls += game.total_calls
+      correct_calls += game.correct_calls
+      incorrect_calls += game.incorrect_calls
+    end
+    call_hash = {total_calls: total_calls, correct_calls: correct_calls, incorrect_calls: incorrect_calls}
+  end
+
+
+
 end

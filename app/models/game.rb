@@ -31,6 +31,10 @@ class Game < ActiveRecord::Base
 			game.total_calls = total_calls
 		end
 
+		unless game.percent_correct
+			game.percent_correct = game.correct_calls.to_f / game.total_calls
+		end
+
     game.save!
 	end
 
