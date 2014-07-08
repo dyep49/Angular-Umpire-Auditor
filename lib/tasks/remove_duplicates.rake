@@ -1,5 +1,5 @@
 desc "Creates gid urls and seeds database"
-task remove_duplicates: :environment do
+task remove_duplicate_game: :environment do
   Game.all.each do |game|
     gid = game.gid
     games = Game.where(gid: gid)
@@ -8,6 +8,7 @@ task remove_duplicates: :environment do
       games.first.destroy
     end
   end
-  
 end 
+
+
 
