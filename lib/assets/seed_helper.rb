@@ -17,8 +17,10 @@ module SeedHelper
 			end
 			Game.set_calls(game)
 			Game.set_team(game)
-		rescue
+		rescue Exception => e
 			puts "INVALID STUFF"
+			puts e.message
+			puts e.backtrace.inspect
 		end
 	end
 
@@ -96,6 +98,11 @@ module SeedHelper
 			new_pitch.sv_id = pitch_attrs[:sv_id]
 			new_pitch.type_id = pitch_attrs[:type_id]
 			new_pitch.missing_data = pitch_attrs[:missing_data]
+			new_pitch.inning_half = pitch_attrs[:inning_half]
+			new_pitch.inning = pitch_attrs[:inning]
+			new_pitch.ball_count = pitch_attrs[:ball_count]
+			new_pitch.strike_count = pitch_attrs[:strike_count]
+			new_pitch.outs = pitch_attrs[:outs]
 			if (new_pitch.sz_top && (new_pitch.description == "Called Strike" || new_pitch.description == "Ball"))
 				new_pitch.correct_call = new_pitch.correct_call? 
 				if new_pitch.description == "Called Strike"
@@ -112,6 +119,12 @@ module SeedHelper
 
 	def self.parse_pitch(pitch)
 		begin
+			count = Pitch.get_count(pitch)
+			inning_half = pitch.parent.parent.name
+			inning = pitch.parent.parent.parent.attributes["num"].value
+			outs = Pitch.get_outs(pitch)
+			ball_count = count[:balls]
+			strike_count = count[:strikes]
 			description = pitch["des"]
 			pid = pitch["id"]
 			x_location = pitch["px"]
@@ -120,12 +133,28 @@ module SeedHelper
 			sz_bottom = pitch["sz_bot"]
 			sv_id = pitch["sv_id"]
 			type_id = pitch["type"]
-			pitch_attrs = {description: description, pid: pid, x_location: x_location, y_location: y_location, sz_top: sz_top, sz_bottom: sz_bottom, sv_id: sv_id, type_id: type_id, missing_data: false}
+			pitch_attrs = {inning_half: inning_half, inning: inning, ball_count: ball_count, strike_count: strike_count, outs: outs, description: description, pid: pid, x_location: x_location, y_location: y_location, sz_top: sz_top, sz_bottom: sz_bottom, sv_id: sv_id, type_id: type_id, missing_data: false}
 		rescue 
 			puts "UNABLE TO CREATE PITCH--------------------------------"
 			pitch_attrs = {missing_data: true}
 		end
-end
+	end
+
+	def self.get_count(pitch)
+		balls = 0
+		strikes = 0
+		pitch = pitch.previous
+		while pitch 
+			pitch.type == "S" ? strikes += 1 : balls += 1
+			pitch = pitch.previous
+		end
+		count = {balls: balls, strikes: strikes}
+	end
+
+	def self.get_outs(pitch)
+		last_atbat = pitch.parent.previous
+		last_atbat ? last_atbat.attributes["o"].value.to_i : 0
+	end
 
 
 

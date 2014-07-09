@@ -20,6 +20,11 @@ class CreatePitches < ActiveRecord::Migration
       t.integer :mlb_umpire_id
       t.integer :batter_id
       t.integer :game_id
+      t.integer :ball_count
+      t.integer :strike_count
+      t.integer :outs
+      t.string :inning_half
+      t.integer :inning
     end
   end
 end
