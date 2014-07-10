@@ -16,8 +16,10 @@ class Day < ActiveRecord::Base
 					Day.create(
 						game_date: game.game_date,
 						umpire: umpire.name,
+						umpire_id: umpire.id,
 						home_team: teams.first.full_name,
 						away_team: teams.last.full_name,
+						pitch_id: worst_call.id,
 						total_distance_missed: worst_call.total_distance_missed,
 						inning: worst_call.inning,
 						ball_count: worst_call.ball_count,
@@ -34,5 +36,5 @@ class Day < ActiveRecord::Base
 
 end
 
-##ADD THE COUNT AND OUTS AND INNING 
+##ADD PITCH ID AND UMPIRE ID
 

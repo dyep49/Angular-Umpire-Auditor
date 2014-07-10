@@ -119,10 +119,10 @@ module SeedHelper
 
 	def self.parse_pitch(pitch)
 		begin
-			count = Pitch.get_count(pitch)
+			count = self.get_count(pitch)
 			inning_half = pitch.parent.parent.name
 			inning = pitch.parent.parent.parent.attributes["num"].value
-			outs = Pitch.get_outs(pitch)
+			outs = self.get_outs(pitch)
 			ball_count = count[:balls]
 			strike_count = count[:strikes]
 			description = pitch["des"]

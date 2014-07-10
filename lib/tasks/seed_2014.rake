@@ -9,9 +9,11 @@ namespace :db do
 				SeedHelper.seed_gid(gid)
 		end
     games = Game.all.select do |game|
-      game.game_date.year == 2014
+      game.game_date.year == 2013
     end
-    Game.set_calls(games)
+    games.each do |game|	
+	    Game.set_calls(game)
+	  end
     Day.create_days(games)
 	end	
 end
