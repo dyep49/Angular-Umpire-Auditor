@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140710131145) do
     t.integer  "strike_count"
     t.integer  "outs"
     t.string   "inning_half"
+    t.integer  "pitch_id"
   end
 
   create_table "favorites", force: true do |t|
@@ -54,7 +55,6 @@ ActiveRecord::Schema.define(version: 20140710131145) do
     t.string   "home_team_abbrev"
     t.string   "away_team_abbrev"
     t.float    "percent_correct"
-    t.integer  "pitch_id"
   end
 
   create_table "games_teams", force: true do |t|

@@ -18,7 +18,6 @@ module SeedHelper
 			Game.set_calls(game)
 			Game.set_team(game)
 		rescue Exception => e
-			puts "INVALID STUFF"
 			puts e.message
 			puts e.backtrace.inspect
 		end
@@ -144,10 +143,21 @@ module SeedHelper
 		balls = 0
 		strikes = 0
 		pitch = pitch.previous
-		while pitch 
-			pitch.type == "S" ? strikes += 1 : balls += 1
+		while pitch
+			if pitch.type == "S" && strikes < 2
+				strikes += 1
+			elsif pitch.type == "B" 
+				balls += 1
+			end
+
+			if(balls > 4)
+				binding.pry
+			end
+
 			pitch = pitch.previous
+
 		end
+
 		count = {balls: balls, strikes: strikes}
 	end
 

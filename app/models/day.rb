@@ -28,8 +28,9 @@ class Day < ActiveRecord::Base
 						inning_half: worst_call.inning_half
 					)
 				end
-			rescue
-				puts "RESCUED"
+			rescue Exception => e
+				puts e.message
+				puts e.backtrace.inspect
 			end
 		end
 	end
