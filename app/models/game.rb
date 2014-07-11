@@ -16,23 +16,23 @@ class Game < ActiveRecord::Base
 	def self.set_calls(game)
     pitches = game.pitches
 
-    unless game.correct_calls
+    if game.correct_calls == 0 || game.correct_calls == nil
 	    correct_calls = pitches.where(correct_call: true).count
 	    game.correct_calls = correct_calls
 	  end
 
-	  unless game.incorrect_calls 
+    if game.incorrect_calls == 0 || game.incorrect_calls == nil
 	    incorrect_calls = pitches.where(correct_call: false).count
 	    game.incorrect_calls = incorrect_calls
 	  end
 
-	  unless game.total_calls
-			total_calls = correct_calls + incorrect_calls
-			game.total_calls = total_calls
+    if game.total_calls == 0 || game.total_calls == nil
+			total_calls = game.correct_calls + game.incorrect_calls
+			game.total_calls = total_calls 
 		end
 
-		unless game.percent_correct
-			game.percent_correct = game.correct_calls.to_f / game.total_calls
+    if game.percent_correct == 0 || game.percent_correct == nil
+			game.percent_correct = game.total_calls != 0 ? game.correct_calls.to_f / game.total_calls : 0
 		end
 
     game.save!

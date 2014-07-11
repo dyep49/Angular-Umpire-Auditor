@@ -25,6 +25,7 @@ class Day < ActiveRecord::Base
 						ball_count: worst_call.ball_count,
 						strike_count: worst_call.strike_count,
 						outs: worst_call.outs,
+						play: worst_call.play,
 						inning_half: worst_call.inning_half
 					)
 				end

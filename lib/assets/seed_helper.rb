@@ -102,6 +102,7 @@ module SeedHelper
 			new_pitch.ball_count = pitch_attrs[:ball_count]
 			new_pitch.strike_count = pitch_attrs[:strike_count]
 			new_pitch.outs = pitch_attrs[:outs]
+			new_pitch.play = pitch_attrs[:play]
 			if (new_pitch.sz_top && (new_pitch.description == "Called Strike" || new_pitch.description == "Ball"))
 				new_pitch.correct_call = new_pitch.correct_call? 
 				if new_pitch.description == "Called Strike"
@@ -122,6 +123,7 @@ module SeedHelper
 			inning_half = pitch.parent.parent.name
 			inning = pitch.parent.parent.parent.attributes["num"].value
 			outs = self.get_outs(pitch)
+			play = self.get_play(pitch)
 			ball_count = count[:balls]
 			strike_count = count[:strikes]
 			description = pitch["des"]
@@ -132,7 +134,7 @@ module SeedHelper
 			sz_bottom = pitch["sz_bot"]
 			sv_id = pitch["sv_id"]
 			type_id = pitch["type"]
-			pitch_attrs = {inning_half: inning_half, inning: inning, ball_count: ball_count, strike_count: strike_count, outs: outs, description: description, pid: pid, x_location: x_location, y_location: y_location, sz_top: sz_top, sz_bottom: sz_bottom, sv_id: sv_id, type_id: type_id, missing_data: false}
+			pitch_attrs = {inning_half: inning_half, inning: inning, ball_count: ball_count, strike_count: strike_count, outs: outs, play: play, description: description, pid: pid, x_location: x_location, y_location: y_location, sz_top: sz_top, sz_bottom: sz_bottom, sv_id: sv_id, type_id: type_id, missing_data: false}
 		rescue 
 			puts "UNABLE TO CREATE PITCH--------------------------------"
 			pitch_attrs = {missing_data: true}
@@ -144,14 +146,10 @@ module SeedHelper
 		strikes = 0
 		pitch = pitch.previous
 		while pitch
-			if pitch.type == "S" && strikes < 2
+			if pitch["type"] == "S" && strikes < 2
 				strikes += 1
-			elsif pitch.type == "B" 
+			elsif pitch["type"] == "B" 
 				balls += 1
-			end
-
-			if(balls > 4)
-				binding.pry
 			end
 
 			pitch = pitch.previous
@@ -164,6 +162,11 @@ module SeedHelper
 	def self.get_outs(pitch)
 		last_atbat = pitch.parent.previous
 		last_atbat ? last_atbat.attributes["o"].value.to_i : 0
+	end
+
+	def self.get_play(pitch)
+		last_atbat = pitch.parent.previous
+		last_atbat["des"]
 	end
 
 

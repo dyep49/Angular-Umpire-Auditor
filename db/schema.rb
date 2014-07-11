@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710131145) do
+ActiveRecord::Schema.define(version: 20140711144841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,12 +49,12 @@ ActiveRecord::Schema.define(version: 20140710131145) do
     t.integer  "mlb_umpire_id"
     t.integer  "umpire_id"
     t.datetime "game_date"
-    t.integer  "total_calls"
-    t.integer  "correct_calls"
-    t.integer  "incorrect_calls"
+    t.integer  "total_calls",      default: 0
+    t.integer  "correct_calls",    default: 0
+    t.integer  "incorrect_calls",  default: 0
     t.string   "home_team_abbrev"
     t.string   "away_team_abbrev"
-    t.float    "percent_correct"
+    t.float    "percent_correct",  default: 0.0
   end
 
   create_table "games_teams", force: true do |t|
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20140710131145) do
     t.integer  "outs"
     t.string   "inning_half"
     t.integer  "inning"
+    t.string   "play"
   end
 
   create_table "teams", force: true do |t|

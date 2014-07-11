@@ -20,6 +20,10 @@ main.config(function($routeProvider) {
 			templateUrl: 'templates/umpire_show.html',
 			controller: 'UmpireShowController'
 		}).
+		when('/teams/:id', {
+			templateUrl: 'templates/team_show.html',
+			controller: 'TeamShowController'
+		})
 		otherwise({
 			redirectTo: '/'
 		})

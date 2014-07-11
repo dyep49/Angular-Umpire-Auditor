@@ -7,6 +7,7 @@ AngularUmpireAuditor::Application.routes.draw do
     get '/worst_call' => 'home#worst_call'
     resources :umpires, only: [:index, :show]
     resources :days, only: [:index]
+    resources :teams, only: [:index, :show]
   end
 
 

@@ -9,6 +9,11 @@ main.controller('IndexController', ['$scope', '$location', 'Game', 'Day', functi
 		$scope.umpire = data.umpire
 		$scope.game = data.game
 		$scope.umpireId = data.umpire_id
+		$scope.ballCount = data.ballCount
+		$scope.strikeCount = data.strikeCount
+		$scope.inning = data.inning
+		$scope.inningHalf = data.inningHalf
+		$scope.outs = data.outs
 	})
 
 	Day.all().then(function(data) {

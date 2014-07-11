@@ -29,7 +29,9 @@ class Umpire < ActiveRecord::Base
     Umpire.all.each do |umpire|
       CSV.open(file_path, "a") do |csv|
         call_hash = umpire.evaluate(umpire.games)
-        csv << [umpire.name, call_hash[:correct_calls], call_hash[:incorrect_calls], call_hash[:total_calls]]
+        unless call_hash[:total_calls] == 0
+          csv << [umpire.name, call_hash[:correct_calls], call_hash[:incorrect_calls], call_hash[:total_calls]]
+        end
       end
     end
     File.rename(file_path, "#{Rails.root}/public/csvs/umpire_rank.csv")
