@@ -1,6 +1,6 @@
 module BuildLinks
 
-	URL_ROOT = "http://gd2.mlb.com/components/game/mlb/year_2013"
+	URL_ROOT = "http://gd2.mlb.com/components/game/mlb/year_2014"
 
 	def self.gid_info
 		gids = []
@@ -29,9 +29,9 @@ module BuildLinks
 	def self.last_night
 		gid_url_array = []
 		date = Date.today.prev_day
-		full_month = sprintf '%02d', date.month
+		month = sprintf '%02d', date.month
 		day = sprintf '%02d', date.day
-		day_url = "#{URL_ROOT}/#{full_month}/day_#{day}"
+		day_url = "#{URL_ROOT}/month_#{month}/day_#{day}"
 		gids = self.parse_gids(day_url)
 		gids.each do |gid|
 			gid_url_array << "#{day_url}/#{gid}"
@@ -40,3 +40,4 @@ module BuildLinks
 	end
 
 end
+

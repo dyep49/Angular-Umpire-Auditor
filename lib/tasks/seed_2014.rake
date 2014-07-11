@@ -17,3 +17,6 @@ namespace :db do
     Day.create_days(games)
 	end	
 end
+
+
+# Game.where(game_date: Date.today.prev_day).each{|game| game.pitches.delete_all; game.destroy!}

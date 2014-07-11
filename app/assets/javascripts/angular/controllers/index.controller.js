@@ -8,6 +8,7 @@ main.controller('IndexController', ['$scope', '$location', 'Game', 'Day', functi
 		$scope.pitch = data.pitch * 12
 		$scope.umpire = data.umpire
 		$scope.game = data.game
+		$scope.imgDate = data.imgDate
 		$scope.umpireId = data.umpire_id
 		$scope.ballCount = data.ballCount
 		$scope.strikeCount = data.strikeCount

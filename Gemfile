@@ -55,4 +55,4 @@ gem 'nokogiri'
 gem 'httparty'
 gem 'angularjs-rails'
 gem 'twitter'
-
+gem 'aws-sdk'

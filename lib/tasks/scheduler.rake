@@ -2,7 +2,7 @@ desc "This task is called by the Heroku scheduler add-on"
 task :update_data => :environment do
   puts "Updating data"
 
-  gids = BuildLinks.last_night
+  gids = BuildLinks.last_night.uniq
   gids.each do |gid|
     SeedHelper.seed_gid(gid)
   end

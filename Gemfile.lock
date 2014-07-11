@@ -28,6 +28,9 @@ GEM
     addressable (2.3.6)
     angularjs-rails (1.2.14)
     arel (4.0.2)
+    aws-sdk (1.47.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     buftok (0.2.0)
     builder (3.1.4)
     coderay (1.1.0)
@@ -160,6 +163,7 @@ PLATFORMS
 
 DEPENDENCIES
   angularjs-rails
+  aws-sdk
   coffee-rails (~> 4.0.0)
   httparty
   jbuilder (~> 1.2)

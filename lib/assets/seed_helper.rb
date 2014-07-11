@@ -136,8 +136,10 @@ module SeedHelper
 			sv_id = pitch["sv_id"]
 			type_id = pitch["type"]
 			pitch_attrs = {inning_half: inning_half, inning: inning, ball_count: ball_count, strike_count: strike_count, outs: outs, play: play, description: description, pid: pid, x_location: x_location, y_location: y_location, sz_top: sz_top, sz_bottom: sz_bottom, sv_id: sv_id, type_id: type_id, missing_data: false}
-		rescue 
-			puts "UNABLE TO CREATE PITCH--------------------------------"
+		rescue Exception => e
+			puts e.message
+			puts e.backtrace.inspect
+			binding.pry
 			pitch_attrs = {missing_data: true}
 		end
 	end
@@ -166,7 +168,7 @@ module SeedHelper
 	end
 
 	def self.get_play(pitch)
-		last_atbat = pitch.parent.previous
+		last_atbat = pitch.parent
 		last_atbat["des"]
 	end
 
