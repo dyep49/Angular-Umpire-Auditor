@@ -24,6 +24,8 @@ task :update_data => :environment do
     config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
     config.access_token_secret = ENV["TWITTER_TOKEN_SECRET"]
   end
+  
+  client.update(Day.last.tweet)
 
 
 end

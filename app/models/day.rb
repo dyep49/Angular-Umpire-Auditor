@@ -5,16 +5,22 @@ class Day < ActiveRecord::Base
 	end
 
 	def self.create_days(games)
+		dates = []
 		games.each do |game|
+			dates << game.game_date
+		end
+		dates = dates.uniq
+
+		dates.each do |date|
 			begin
-				unless Day.all.any?{|day| day.game_date == game.game_date}
-					games = Game.where(game_date: game.game_date)
+				unless Day.all.any?{|day| day.game_date == date}
+					games = Game.where(game_date: date)
 					game = games.max_by(&:worst_call)
 					worst_call = game.worst_call
 					umpire = game.umpire
 					teams = game.teams
 					Day.create(
-						game_date: game.game_date,
+						game_date: date,
 						umpire: umpire.name,
 						umpire_id: umpire.id,
 						home_team: teams.first.full_name,
@@ -36,7 +42,11 @@ class Day < ActiveRecord::Base
 		end
 	end
 
-end
+	def tweet
+		inning_int = inning.to_i
+		miss_inches = total_distance_missed*12.round(2)
+		"With a #{ball_count}-#{strike_count} count in the #{inning_half} of the #{inning_int.ordinalize}, umpire #{umpire} called a strike on a pitch that missed the strike zone by #{miss_inches} inches"
+	end
 
-##ADD PITCH ID AND UMPIRE ID
+end
 
