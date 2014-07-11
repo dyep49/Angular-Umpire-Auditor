@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711144841) do
+ActiveRecord::Schema.define(version: 20140711152326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140711144841) do
     t.string   "home_team_abbrev"
     t.string   "away_team_abbrev"
     t.float    "percent_correct",  default: 0.0
+    t.string   "umpire_name"
   end
 
   create_table "games_teams", force: true do |t|

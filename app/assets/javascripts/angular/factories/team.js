@@ -1,6 +1,4 @@
 main.factory('Team', ['$http', function($http) {
-
-
   return {
     all: function(callback) {
       $http.get('/api/teams')

@@ -46,6 +46,7 @@ module SeedHelper
 		game.gid = game_url[/gid[^\/]*/]
 		game.game_date = self.gid_to_date(game.gid)
 		game.mlb_umpire_id = umpire.mlb_umpire_id
+		game.umpire_name = umpire.name
 		home_team = self.set_team(response["game"]["team"][0])
 		away_team = self.set_team(response["game"]["team"][1])
 		game.save!

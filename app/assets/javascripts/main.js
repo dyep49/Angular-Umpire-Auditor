@@ -23,7 +23,7 @@ main.config(function($routeProvider) {
 		when('/teams/:id', {
 			templateUrl: 'templates/team_show.html',
 			controller: 'TeamShowController'
-		})
+		}).
 		otherwise({
 			redirectTo: '/'
 		})

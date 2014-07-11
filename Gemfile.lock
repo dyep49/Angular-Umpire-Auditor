@@ -25,8 +25,10 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    addressable (2.3.6)
     angularjs-rails (1.2.14)
     arel (4.0.2)
+    buftok (0.2.0)
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -37,11 +39,15 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     diff-lcs (1.2.5)
+    equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.0.2)
-    gameday_api (0.5.3)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     hike (1.2.3)
-    hpricot (0.8.6)
+    http (0.6.1)
+      http_parser.rb (~> 0.6.0)
+    http_parser.rb (0.6.0)
     httparty (0.12.0)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -56,12 +62,16 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.3)
     minitest (4.7.5)
     multi_json (1.9.2)
     multi_xml (0.5.5)
+    multipart-post (2.0.0)
+    naught (1.0.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     pg (0.17.1)
@@ -112,6 +122,7 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    simple_oauth (0.2.0)
     slop (3.5.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -128,6 +139,17 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    twitter (5.11.0)
+      addressable (~> 2.3)
+      buftok (~> 0.2.0)
+      equalizer (~> 0.0.9)
+      faraday (~> 0.9.0)
+      http (~> 0.6.0)
+      http_parser.rb (~> 0.6.0)
+      json (~> 1.8)
+      memoizable (~> 0.4.0)
+      naught (~> 1.0)
+      simple_oauth (~> 0.2.0)
     tzinfo (0.3.39)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
@@ -139,8 +161,6 @@ PLATFORMS
 DEPENDENCIES
   angularjs-rails
   coffee-rails (~> 4.0.0)
-  gameday_api
-  hpricot
   httparty
   jbuilder (~> 1.2)
   jquery-rails
@@ -152,4 +172,5 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.2)
   sdoc
+  twitter
   uglifier (>= 1.3.0)

@@ -16,6 +16,15 @@ task :update_data => :environment do
   Umpire.update_ranking
   Umpire.update_year_ranking(Date.today.year)
   
-  puts "done"
+  puts "updating data complete"
+
+  client = Twitter::REST::Client.new do |config|
+    config.consumer_key        = ENV["TWITTER_API_KEY"]
+    config.consumer_secret     = ENV["TWITTER_API_SECRET_KEY"]
+    config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
+    config.access_token_secret = ENV["TWITTER_TOKEN_SECRET"]
+  end
+
+
 end
 

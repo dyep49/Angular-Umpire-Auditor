@@ -1,1 +1,26 @@
-<h1>Test</h1>
+<h1>{{team.full_name}}</h1>
+
+<table class="table table-striped table-hover table-responsive" ts-wrapper>
+  <thead>
+    <tr>
+      <th ts-criteria="game_date|parseDate" ts-default="descending">Date</th>
+      <th ts-criteria="home_team_abbrev">Game</th>
+      <th ts-criteria="umpire_name">Umpire</th>
+      <th ts-criteria="percent_correct">Calls Correct (%)</th>
+      <th ts-criteria="correct_calls|parseInt">Correct Calls</th>
+      <th ts-criteria="incorrect_calls|parseInt">Incorrect Calls</th>
+      <th ts-criteria="total_calls|parseInt">Total Calls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="game in games|filter:query" ts-repeat>
+      <td>{{game.game_date | timezone | date: 'longDate'}}</td>
+      <td>{{game.home_team_abbrev}} vs. {{game.away_team_abbrev}}</td>
+      <td>{{game.umpire_name}}</td>
+      <td>{{game.percent_correct | number:2}}</td>
+      <td>{{game.correct_calls}}</td>
+      <td>{{game.incorrect_calls}}</td>
+      <td>{{game.total_calls}}</td>
+    </tr>
+  </tbody>
+</table>
