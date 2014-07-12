@@ -37,6 +37,7 @@ group :development do
 	gem 'pry-nav'
 end
 
+gem 'rails_12factor', group: :production
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -56,3 +57,9 @@ gem 'httparty'
 gem 'angularjs-rails'
 gem 'twitter'
 gem 'aws-sdk'
+
+#To fix heroku bug
+gem 'execjs'
+gem 'therubyracer'
+
+
