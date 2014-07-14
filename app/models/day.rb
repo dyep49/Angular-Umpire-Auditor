@@ -15,8 +15,9 @@ class Day < ActiveRecord::Base
 			begin
 				unless Day.all.any?{|day| day.game_date == date}
 					games = Game.where(game_date: date).select{|game| game.pitches.any?}
-					game = games.max_by(&:worst_call)
-					worst_call = game.worst_call
+					pitches = []
+					games.each {|game| pitches << game.worst_call}
+					worst_call = pitches.max_by {|pitch| pitch.total_distance_missed}
 					umpire = game.umpire
 					teams = game.teams
 					unless worst_call.total_distance_missed == 0

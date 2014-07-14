@@ -6,7 +6,7 @@
       <th ts-criteria="game|parseDate" ts-default="descending">Date</th>
       <th ts-criteria="umpire">Umpire</th>
       <th ts-criteria="total_distance_missed|parseFloat">Distance Missed</th>
-      <th ts-criteria="home_team">Game</th>
+      <th ts-criteria="home_team">Home Team</th>
       <th ts-criteria="away_team">Away Team</th>
     </tr>
   </thead>
@@ -14,7 +14,7 @@
     <tr ng-repeat="day in days" ts-repeat>
       <td>{{day.game_date | timezone | date: 'longDate'}}</td>
       <td>{{day.umpire}}</td>
-      <td>{{day.total_distance_missed | number:2}}</td>
+      <td>{{day.total_distance_missed * 12 | number:2}}</td>
       <td>{{day.home_team}}</td>
       <td>{{day.away_team}}</td>
     </tr>

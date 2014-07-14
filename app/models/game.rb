@@ -54,4 +54,6 @@ class Game < ActiveRecord::Base
 		pitches.max_by(&:total_distance_missed)
 	end
 
+
+
 end
