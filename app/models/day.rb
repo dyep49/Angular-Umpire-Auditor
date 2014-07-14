@@ -19,22 +19,24 @@ class Day < ActiveRecord::Base
 					worst_call = game.worst_call
 					umpire = game.umpire
 					teams = game.teams
-					Day.create(
-						game_date: date,
-						umpire: umpire.name,
-						umpire_id: umpire.id,
-						home_team: teams.first.full_name,
-						away_team: teams.last.full_name,
-						pitch_id: worst_call.id,
-						total_distance_missed: worst_call.total_distance_missed,
-						inning: worst_call.inning,
-						ball_count: worst_call.ball_count,
-						strike_count: worst_call.strike_count,
-						outs: worst_call.outs,
-						play: worst_call.play,
-						inning_half: worst_call.inning_half,
-						img_date: date.strftime("%Y-%m-%d")
-					)
+					unless worst_call.total_distance_missed == 0
+						Day.create(
+							game_date: date,
+							umpire: umpire.name,
+							umpire_id: umpire.id,
+							home_team: teams.first.full_name,
+							away_team: teams.last.full_name,
+							pitch_id: worst_call.id,
+							total_distance_missed: worst_call.total_distance_missed,
+							inning: worst_call.inning,
+							ball_count: worst_call.ball_count,
+							strike_count: worst_call.strike_count,
+							outs: worst_call.outs,
+							play: worst_call.play,
+							inning_half: worst_call.inning_half,
+							img_date: date.strftime("%Y-%m-%d")
+						)
+					end
 				end
 			rescue Exception => e
 				puts e.message

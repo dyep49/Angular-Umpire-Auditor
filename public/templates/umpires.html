@@ -11,7 +11,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="umpire in umpires|filter:query" ts-repeat>
+		<tr ng-repeat="umpire in umpires" ts-repeat>
 			<td><a href='#/umpires/{{umpire.id}}'>{{umpire.name}}</a></td>
 			<td>{{umpire.correctCallPercent | number:2}}</td>
 			<td>{{umpire.correctCalls}}</td>
