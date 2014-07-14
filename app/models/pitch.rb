@@ -1,7 +1,7 @@
 class Pitch < ActiveRecord::Base
 	belongs_to :game
 
-	HALF_PLATE_WIDTH = (17.5/12)/2
+	HALF_PLATE_WIDTH = (17/12.0)/2
 
 	def correct_call?
 		self.strike? == self.description

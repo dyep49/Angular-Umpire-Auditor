@@ -18,9 +18,6 @@ main.controller('GameController', ['$scope','$routeParams', '$location', 'Game',
 			$scope.disabled = function(date, mode) {
 		  	var gameDate = new Date(date)
 		  	var parsedDate = '' + gameDate.getYear() + '' + gameDate.getMonth() + '' + gameDate.getDate()
-		  	if(dateArray.indexOf(parsedDate) == -1) {
-		  		debugger;
-		  	}
 		    return ( mode === 'day' && (dateArray.indexOf(parsedDate) != -1));
 		  };
 		})

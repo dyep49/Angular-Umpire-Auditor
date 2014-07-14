@@ -1,2 +1,5 @@
 Day August 7, 2013
 -Bad data
+
+April 21, 2013
+-Worst all has 0 for sztop and szbottom
