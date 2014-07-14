@@ -9,12 +9,16 @@ main.config(function($routeProvider) {
 			controller: 'IndexController'
 		}).
 		when('/games/date/:year/:month/:day', {
-			templateUrl: 'templates/games.html',
+			templateUrl: 'templates/index.html',
 			controller: 'GameController'
 		}).
 		when('/umpires', {
 			templateUrl: 'templates/umpires.html',
 			controller: 'UmpireController'
+		}).
+		when('/umpires/ranking/:year', {
+			templateUrl: 'templates/umpire_ranking_show.html',
+			controller: 'UmpireYearRankingController'
 		}).
 		when('/umpires/:id', {
 			templateUrl: 'templates/umpire_show.html',
@@ -23,6 +27,10 @@ main.config(function($routeProvider) {
 		when('/teams/:id', {
 			templateUrl: 'templates/team_show.html',
 			controller: 'TeamShowController'
+		}).
+		when('/days', {
+			templateUrl: 'templates/days.html',
+			controller: 'DayController'
 		}).
 		otherwise({
 			redirectTo: '/'

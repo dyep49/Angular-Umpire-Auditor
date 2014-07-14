@@ -7,22 +7,12 @@ main.controller('GameController', ['$scope','$routeParams', '$location', 'Game',
 	var day = $routeParams.day
 
 	Game.show(year, month, day, function(data) {
-		$scope.homeTeam = data.homeTeam
-		$scope.awayTeam = data.awayTeam
-		$scope.pitch = data.pitch * 12
-		$scope.umpire = data.umpire
-		$scope.game = data.game
-		$scope.imgDate = data.imgDate
-		$scope.umpireId = data.umpire_id
-		$scope.ballCount = data.ballCount
-		$scope.strikeCount = data.strikeCount
-		$scope.inning = data.inning
-		$scope.inningHalf = data.inningHalf
-		$scope.outs = data.outs
+		$scope.data = data
+		$scope.umpire = data.umpire_id
 		}
 	)
 
-	Day.all().then(function(data) {
+	Day.dates().then(function(data) {
 		data.forEach(function(date) {
 			dateArray.push(date)
 			$scope.disabled = function(date, mode) {

@@ -1,8 +1,13 @@
 main.factory('Day', ['$http', function($http) {
 	{
 		return {
-			all: function() {
+			all: function(callback) {
 				return $http.get('/api/days')
+					.success(callback)
+			},
+
+			dates: function() {
+				return $http.get('/api/days/dates')
 					.then(function(result) {
 						// var dateArray = []
 						// result.data.forEach(function(game) {
@@ -13,7 +18,6 @@ main.factory('Day', ['$http', function($http) {
 						dates = result.data.map(function(day) {
 							day = new Date(day)
 					  	var parsedDate = '' + day.getYear() + '' + day.getMonth() + '' + day.getDate()	
-					  	console.log(parsedDate)
 					  	return parsedDate
 						})
 						return dates

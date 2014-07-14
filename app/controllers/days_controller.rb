@@ -1,6 +1,11 @@
 class DaysController < ApplicationController
 
-	def index
+  def index
+    render json: Day.all
+  end
+
+
+	def dates
     days = Day.all
     day_array = []
     days.each do |day|

@@ -3,9 +3,10 @@ require 'csv'
 class Umpire < ActiveRecord::Base
 	has_many :games
 
-  def self.read_umpire_csv
+  def self.read_umpire_csv(options = {})
+    file_path = options[:year] ? "#{Rails.root}/public/csvs/umpire_rank_#{options[:year]}.csv" : "#{Rails.root}/public/csvs/umpire_rank.csv"
     umpire_array = []
-    CSV.foreach("#{Rails.root}/public/csvs/umpire_rank.csv") do |csv_obj|
+    CSV.foreach(file_path) do |csv_obj|
       percent_correct = (csv_obj[1].to_i/csv_obj[3].to_f) * 100
 
       umpire_hash = {}

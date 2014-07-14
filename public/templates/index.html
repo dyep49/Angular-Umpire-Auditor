@@ -11,17 +11,4 @@
 
 <button class='btn' ng-show="dt" ng-click="submitDate()">Submit</button>
 
-
-
-<h1>The Worst Call of the Day</h1>
-<h2>{{game | timezone | date : 'longDate'}}</h2>
-<h2>Belongs To</h2>
-<h1><a href="/#/umpires/{{umpireId}}">{{umpire}}</a></h1>
-<h2>{{homeTeam}} vs. {{awayTeam}}</h2>
-
-<p>With a {{ballCount}}-{{strike-count}} count in the {{inningHalf}} of the {{inning | ordinalSuffix}} inning, umpire {{umpire}} called a strike on a pitch that missed the strike zone by {{pitch|number:2}} inches</p>
-
-<img err-src="http://placekitten.com/640/300" ng-src="http://s3.amazonaws.com/UmpireAuditor/{{imgDate}}.gif">
-
-
-
+<worstcall callinfo="data" umpire="umpire"></worstcall>

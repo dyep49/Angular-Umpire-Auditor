@@ -13,5 +13,12 @@ def show
 	render json: {games: games, umpire: umpire}
 end
 
+def show_year
+  year = params[:year]
+  ranking = Umpire.read_umpire_csv(year: year)
+
+  render json: ranking
+
+end
 
 end
