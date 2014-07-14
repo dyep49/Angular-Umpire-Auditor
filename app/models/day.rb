@@ -18,6 +18,7 @@ class Day < ActiveRecord::Base
 					pitches = []
 					games.each {|game| pitches << game.worst_call}
 					worst_call = pitches.max_by {|pitch| pitch.total_distance_missed}
+					game = worst_call.game
 					umpire = game.umpire
 					teams = game.teams
 					unless worst_call.total_distance_missed == 0
