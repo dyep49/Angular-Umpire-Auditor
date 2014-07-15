@@ -4,12 +4,14 @@ module SeedHelper
 
 	def self.seed_gid(gid_url)
 		begin
+			puts gid_url
 			game_type = self.set_game_type("#{gid_url}/linescore.json")
 			if GAME_TYPES.include?(game_type)
 				umpire_url = "#{gid_url}/players.xml"
 				umpire = self.set_umpire(umpire_url)
 				game_url = "#{gid_url}/game.xml"
 				game = self.set_game(game_url, umpire)
+				game.game_type = game_type
 				umpire.games << game
 				pitches_url = "#{gid_url}/inning/inning_all.xml"
 				pitches = self.set_pitches(pitches_url)
@@ -122,6 +124,11 @@ module SeedHelper
 					new_pitch.total_distance_missed = new_pitch.total_miss
 				end
 			end
+
+			if (new_pitch.sz_top == 0 || new_pitch.sz_top == 0)
+				new_pitch.missing_data = true
+			end
+
 			new_pitch.save!
 			pitch_array << new_pitch
 		end
