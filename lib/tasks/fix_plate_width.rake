@@ -13,5 +13,8 @@ namespace :db do
           pitch.save!
         end
       rescue
+        puts "=========================="
       end
+    end
+  end
 end
