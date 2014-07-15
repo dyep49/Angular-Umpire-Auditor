@@ -1,26 +1,36 @@
 module SeedHelper
 
+	GAME_TYPES = ["R", "A", "F", "D", "L", "W"]
+
 	def self.seed_gid(gid_url)
 		begin
-			umpire_url = "#{gid_url}/players.xml"
-			umpire = self.set_umpire(umpire_url)
-			game_url = "#{gid_url}/game.xml"
-			game = self.set_game(game_url, umpire)
-			umpire.games << game
-			pitches_url = "#{gid_url}/inning/inning_all.xml"
-			pitches = self.set_pitches(pitches_url)
-			pitches.map do |pitch| 
-				pitch.gid = game.gid
-				pitch.mlb_umpire_id = umpire.mlb_umpire_id
-				pitch.date_string = game.game_date
-				game.pitches << pitch
+			game_type = self.set_game_type("#{gid_url}/linescore.json")
+			if GAME_TYPES.include?(game_type)
+				umpire_url = "#{gid_url}/players.xml"
+				umpire = self.set_umpire(umpire_url)
+				game_url = "#{gid_url}/game.xml"
+				game = self.set_game(game_url, umpire)
+				umpire.games << game
+				pitches_url = "#{gid_url}/inning/inning_all.xml"
+				pitches = self.set_pitches(pitches_url)
+				pitches.map do |pitch| 
+					pitch.gid = game.gid
+					pitch.mlb_umpire_id = umpire.mlb_umpire_id
+					pitch.date_string = game.game_date
+					game.pitches << pitch
+				end
+				Game.set_calls(game)
+				Game.set_team(game)
 			end
-			Game.set_calls(game)
-			Game.set_team(game)
 		rescue Exception => e
 			puts e.message
 			puts e.backtrace.inspect
 		end
+	end
+
+	def self.set_game_type(url)
+		response = HTTParty.get(url)
+		game_type = response["data"]["game"]["game_type"]
 	end
 
 	def self.set_umpire(umpire_url) 
