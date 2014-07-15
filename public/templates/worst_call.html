@@ -4,7 +4,6 @@
 <h1><a ng-href="/#/umpires/{{umpire}}">{{callinfo.umpire}}</a></h1>
 <h2>{{callinfo.homeTeam}} vs. {{callinfo.awayTeam}}</h2>
 
-<p>With a {{callinfo.ballCount}}-{{callinfo.strike-count}} count in the {{callinfo.inningHalf}} of the {{callinfo.inning | ordinalSuffix}} inning, umpire {{callinfo.umpire}} called a strike on a pitch that missed the strike zone by {{callinfo.pitch|number:2}} inches</p>
+<p>With a {{callinfo.ballCount}}-{{callinfo.strike-count}} count in the {{callinfo.inningHalf}} of the {{callinfo.inning | ordinalSuffix}} inning, umpire {{callinfo.umpire}} called a strike on a pitch that missed the strike zone by {{callinfo.pitch * 12|number:2}} inches</p>
 
 <img err-src="http://placekitten.com/640/400" ng-src="http://s3.amazonaws.com/UmpireAuditor/{{callinfo.imgDate}}.gif">
-

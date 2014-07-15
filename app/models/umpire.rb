@@ -15,7 +15,7 @@ class Umpire < ActiveRecord::Base
       umpire_hash["incorrectCalls"] = csv_obj[2]
       umpire_hash["correctCallPercent"] = percent_correct
       umpire_hash["totalCalls"] = csv_obj[3]
-
+      binding.pry
       id = Umpire.find_by(name: umpire_hash["name"]).id
       umpire_hash["id"] = id
       
