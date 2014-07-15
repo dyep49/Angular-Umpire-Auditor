@@ -38796,12 +38796,16 @@ main.config(function($routeProvider) {
 			controller: 'IndexController'
 		}).
 		when('/games/date/:year/:month/:day', {
-			templateUrl: 'templates/games.html',
+			templateUrl: 'templates/index.html',
 			controller: 'GameController'
 		}).
 		when('/umpires', {
 			templateUrl: 'templates/umpires.html',
 			controller: 'UmpireController'
+		}).
+		when('/umpires/ranking/:year', {
+			templateUrl: 'templates/umpire_ranking_show.html',
+			controller: 'UmpireYearRankingController'
 		}).
 		when('/umpires/:id', {
 			templateUrl: 'templates/umpire_show.html',
@@ -38811,10 +38815,26 @@ main.config(function($routeProvider) {
 			templateUrl: 'templates/team_show.html',
 			controller: 'TeamShowController'
 		}).
+		when('/days', {
+			templateUrl: 'templates/days.html',
+			controller: 'DayController'
+		}).
 		otherwise({
 			redirectTo: '/'
 		})
 })
+;
+main.controller('DayController', ['$scope', 'Day', function($scope, Day) {
+
+    Day.all(function(data) {
+      console.log(data)
+      $scope.days = data
+    })
+
+
+
+
+}])
 ;
 main.controller('GameController', ['$scope','$routeParams', '$location', 'Game', 'Day', function($scope, $routeParams, $location, Game, Day) {
 
@@ -38825,30 +38845,17 @@ main.controller('GameController', ['$scope','$routeParams', '$location', 'Game',
 	var day = $routeParams.day
 
 	Game.show(year, month, day, function(data) {
-		$scope.homeTeam = data.homeTeam
-		$scope.awayTeam = data.awayTeam
-		$scope.pitch = data.pitch * 12
-		$scope.umpire = data.umpire
-		$scope.game = data.game
-		$scope.imgDate = data.imgDate
-		$scope.umpireId = data.umpire_id
-		$scope.ballCount = data.ballCount
-		$scope.strikeCount = data.strikeCount
-		$scope.inning = data.inning
-		$scope.inningHalf = data.inningHalf
-		$scope.outs = data.outs
+		$scope.data = data
+		$scope.umpire = data.umpire_id
 		}
 	)
 
-	Day.all().then(function(data) {
+	Day.dates().then(function(data) {
 		data.forEach(function(date) {
 			dateArray.push(date)
 			$scope.disabled = function(date, mode) {
 		  	var gameDate = new Date(date)
 		  	var parsedDate = '' + gameDate.getYear() + '' + gameDate.getMonth() + '' + gameDate.getDate()
-		  	if(dateArray.indexOf(parsedDate) == -1) {
-		  		debugger;
-		  	}
 		    return ( mode === 'day' && (dateArray.indexOf(parsedDate) != -1));
 		  };
 		})
@@ -38879,29 +38886,16 @@ main.controller('IndexController', ['$scope', '$location', 'Game', 'Day', functi
 	var dateArray = []
 
 	Game.worstCall(function(data) {
-		$scope.homeTeam = data.homeTeam
-		$scope.awayTeam = data.awayTeam
-		$scope.pitch = data.pitch * 12
-		$scope.umpire = data.umpire
-		$scope.game = data.game
-		$scope.imgDate = data.imgDate
-		$scope.umpireId = data.umpire_id
-		$scope.ballCount = data.ballCount
-		$scope.strikeCount = data.strikeCount
-		$scope.inning = data.inning
-		$scope.inningHalf = data.inningHalf
-		$scope.outs = data.outs
+		$scope.data = data
+		$scope.umpire = data.umpire_id
 	})
 
-	Day.all().then(function(data) {
+	Day.dates().then(function(data) {
 		data.forEach(function(date) {
 			dateArray.push(date)
 			$scope.disabled = function(date, mode) {
 		  	var gameDate = new Date(date)
 		  	var parsedDate = '' + gameDate.getYear() + '' + gameDate.getMonth() + '' + gameDate.getDate()
-		  	if(dataArray.indexOf(parsedDate) == -1) {
-		  		debugger;
-		  	}
 		    return ( mode === 'day' && (dateArray.indexOf(parsedDate) != -1));
 		  };
 		})
@@ -38963,6 +38957,16 @@ main.controller('UmpireShowController', ['$scope', 'Umpire', '$routeParams', '$f
 }])
 
 ;
+main.controller('UmpireYearRankingController', ['$scope', 'Umpire', '$routeParams', function($scope, Umpire, $routeParams) {
+
+  $scope.year = $routeParams.year
+
+  Umpire.showYear($scope.year, function(data) {
+    $scope.umpires = data
+  })
+
+}])
+;
 main.directive('errSrc', function() {
   return {
     link: function(scope, element, attrs) {
@@ -38972,22 +38976,41 @@ main.directive('errSrc', function() {
     }
   }
 });
+main.directive('umpiretable', [function() {
+  return {
+    restrict: 'E',
+    scope: {
+      umpires: '=umpires'
+    },
+    templateUrl: 'templates/umpire_table.html'
+  }
+}])
+;
+main.directive('worstcall', [function() {
+  return {
+    restrict: 'E',
+    scope: {
+      callinfo: "=callinfo",
+      umpire: "=umpire"
+    },
+    templateUrl: 'templates/worst_call.html'
+  }
+}])
+;
 main.factory('Day', ['$http', function($http) {
 	{
 		return {
-			all: function() {
+			all: function(callback) {
 				return $http.get('/api/days')
+					.success(callback)
+			},
+
+			dates: function() {
+				return $http.get('/api/days/dates')
 					.then(function(result) {
-						// var dateArray = []
-						// result.data.forEach(function(game) {
-						// 	var gameDate = new Date(game.game_date)
-					 //  	var parsedDate = '' + gameDate.getYear() + '' + gameDate.getMonth() + '' + gameDate.getDate()
-						// 	dateArray.push(parsedDate)
-						// })
 						dates = result.data.map(function(day) {
 							day = new Date(day)
 					  	var parsedDate = '' + day.getYear() + '' + day.getMonth() + '' + day.getDate()	
-					  	console.log(parsedDate)
 					  	return parsedDate
 						})
 						return dates
@@ -39039,6 +39062,11 @@ main.factory('Umpire', ['$http', function($http) {
 
 		show: function(id, callback) {
 			$http.get('/api/umpires/' + id)
+				.success(callback)
+		},
+
+		showYear: function(year, callback) {
+			$http.get('/api/umpires/year/' + year)
 				.success(callback)
 		}
 	}
