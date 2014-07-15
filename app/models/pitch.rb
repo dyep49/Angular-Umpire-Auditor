@@ -21,7 +21,7 @@ class Pitch < ActiveRecord::Base
 
 	def x_miss
 		if self.x_location.abs > HALF_PLATE_WIDTH
-			self.distance_missed_x = (self.x_location.abs - HALF_PLATE_WIDTH).round(2)
+			self.distance_missed_x = (self.x_location.abs - HALF_PLATE_WIDTH).round(3)
 		else
 			self.distance_missed_x = 0
 		end
@@ -29,9 +29,9 @@ class Pitch < ActiveRecord::Base
 
 	def y_miss
 		if self.y_location > self.sz_top
-			self.distance_missed_y = (self.y_location - self.sz_top).round(2)
+			self.distance_missed_y = (self.y_location - self.sz_top).round(3)
 		elsif self.y_location < self.sz_bottom 
-			self.distance_missed_y = (self.sz_bottom - self.y_location).round(2)
+			self.distance_missed_y = (self.sz_bottom - self.y_location).round(3)
 		else
 			self.distance_missed_y = 0
 		end
