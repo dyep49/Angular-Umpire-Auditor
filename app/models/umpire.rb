@@ -11,10 +11,10 @@ class Umpire < ActiveRecord::Base
 
       umpire_hash = {}
       umpire_hash["name"] = csv_obj[0]
-      umpire_hash["correctCalls"] = csv_obj[1]
-      umpire_hash["incorrectCalls"] = csv_obj[2]
+      umpire_hash["correctCalls"] = csv_obj[1].to_i
+      umpire_hash["incorrectCalls"] = csv_obj[2].to_i
       umpire_hash["correctCallPercent"] = percent_correct
-      umpire_hash["totalCalls"] = csv_obj[3]
+      umpire_hash["totalCalls"] = csv_obj[3].to_i
       id = Umpire.find_by(name: umpire_hash["name"]).id
       umpire_hash["id"] = id
       
