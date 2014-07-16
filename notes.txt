@@ -1,5 +1,41 @@
 Day August 7, 2013
 -Bad data
 
+
+
+September 17, 2013
+-Giants v Mets
+-Pitch 1076154 incorrect data
+
 April 21, 2013
--Worst all has 0 for sztop and szbottom
+-Redsox v Royals
+-Pitch 491818 0 for sztop and szbottom
+
+September 20, 2012
+-Redsox v Rays
+-Pitch 1789493 incorrect data
+
+July 1, 2012
+-Dbacks Brewers
+-Pitch 1476837 incorrect data
+
+June 22, 2013
+-Dodgers Padres
+-Pitch 738923 y location is off
+
+May 23, 2014
+-Phillies Dodgers
+-Pitch 208054 looks like x location is exaggerated?
+
+April 30, 2012
+-Astros Mets
+-Pitch 1234300 check swing looks like he want around and that's what was called
+
+April 7, 2013
+-Mariners Blue Jays
+-Pitch 912455 looks like bad data
+
+April 11, 2013
+-Blue Jays Tigers
+-Pithc 455885 swinging strike not a called strike
+
