@@ -1,6 +1,6 @@
 module BuildLinks
 
-	URL_ROOT = "http://gd2.mlb.com/components/game/mlb/year_2013"
+	URL_ROOT = "http://gd2.mlb.com/components/game/mlb/year_2012"
 
 	def self.gid_info
 		gids = []
