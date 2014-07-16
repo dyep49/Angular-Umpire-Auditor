@@ -49,7 +49,7 @@ class Day < ActiveRecord::Base
 
 	def tweet
 		inning_int = inning.to_i
-		miss_inches = total_distance_missed*12.round(2)
+		miss_inches = (total_distance_missed*12).round(2)
 		"With a #{ball_count}-#{strike_count} count in the #{inning_half} of the #{inning_int.ordinalize}, umpire #{umpire} called a strike on a pitch that missed the strike zone by #{miss_inches} inches"
 	end
 
