@@ -17,12 +17,12 @@ class Game < ActiveRecord::Base
     pitches = game.pitches
 
     if game.correct_calls == 0 || game.correct_calls == nil
-	    correct_calls = pitches.where(correct_call: true).count
+	    correct_calls = pitches.where(correct_call: true).where(missing_data: false).count
 	    game.correct_calls = correct_calls
 	  end
 
     if game.incorrect_calls == 0 || game.incorrect_calls == nil
-	    incorrect_calls = pitches.where(correct_call: false).count
+	    incorrect_calls = pitches.where(correct_call: false).where(missing_data: false).count
 	    game.incorrect_calls = incorrect_calls
 	  end
 
