@@ -18,7 +18,9 @@ task :update_data => :environment do
   
   puts "updating data complete"
 
-  if Day.order(:game_date).last.game_date == Date.today.prev_day
+  last_day = Day.order(:game_date).last
+
+  if last_day.last.game_date == Date.today.prev_day
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["TWITTER_API_KEY"]
       config.consumer_secret     = ENV["TWITTER_API_SECRET_KEY"]
@@ -26,7 +28,7 @@ task :update_data => :environment do
       config.access_token_secret = ENV["TWITTER_TOKEN_SECRET"]
     end
 
-    client.update(Day.last.tweet)
+    client.update(last_day.tweet)
   end
 
 end
