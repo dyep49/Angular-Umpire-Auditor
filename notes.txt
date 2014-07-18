@@ -6,36 +6,45 @@ Day August 7, 2013
 September 17, 2013
 -Giants v Mets
 -Pitch 1076154 incorrect data
+-CLEANED
 
 April 21, 2013
 -Redsox v Royals
 -Pitch 491818 0 for sztop and szbottom
+-CLEANED
 
 September 20, 2012
 -Redsox v Rays
 -Pitch 1789493 incorrect data
+-CLEANED
 
 July 1, 2012
 -Dbacks Brewers
 -Pitch 1476837 incorrect data
+-CLEANED
 
 June 22, 2013
 -Dodgers Padres
 -Pitch 738923 y location is off
+-CLEANED
 
 May 23, 2014
 -Phillies Dodgers
 -Pitch 208054 looks like x location is exaggerated?
+-CLEANED
 
 April 30, 2012
 -Astros Mets
 -Pitch 1234300 check swing looks like he want around and that's what was called
+-CLEANED
 
 April 7, 2013
 -Mariners Blue Jays
 -Pitch 912455 looks like bad data
+-CLEANED
 
 April 11, 2013
 -Blue Jays Tigers
 -Pithc 455885 swinging strike not a called strike
+-CLEANED
 
