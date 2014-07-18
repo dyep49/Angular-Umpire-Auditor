@@ -18,15 +18,16 @@ task :update_data => :environment do
   
   puts "updating data complete"
 
-  client = Twitter::REST::Client.new do |config|
-    config.consumer_key        = ENV["TWITTER_API_KEY"]
-    config.consumer_secret     = ENV["TWITTER_API_SECRET_KEY"]
-    config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
-    config.access_token_secret = ENV["TWITTER_TOKEN_SECRET"]
-  end
-  
-  client.update(Day.last.tweet)
+  if Day.order(:game_date).last.game_date == Date.today.prev_day
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV["TWITTER_API_KEY"]
+      config.consumer_secret     = ENV["TWITTER_API_SECRET_KEY"]
+      config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
+      config.access_token_secret = ENV["TWITTER_TOKEN_SECRET"]
+    end
 
+    client.update(Day.last.tweet)
+  end
 
 end
 
