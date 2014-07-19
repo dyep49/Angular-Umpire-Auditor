@@ -20,7 +20,7 @@ task :update_data => :environment do
 
   last_day = Day.order(:game_date).last
 
-  if last_day.last.game_date == Date.today.prev_day
+  if last_day.game_date == Date.today.prev_day
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["TWITTER_API_KEY"]
       config.consumer_secret     = ENV["TWITTER_API_SECRET_KEY"]
