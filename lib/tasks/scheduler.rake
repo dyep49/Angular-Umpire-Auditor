@@ -17,7 +17,9 @@ task :update_data => :environment do
   Umpire.update_year_ranking(Date.today.year)
   
   puts "updating data complete"
+end
 
+task :tweet => :environment do 
   last_day = Day.order(:game_date).last
 
   if last_day.game_date == Date.today.prev_day
@@ -30,6 +32,6 @@ task :update_data => :environment do
 
     client.update(last_day.tweet)
   end
-
 end
+
 
