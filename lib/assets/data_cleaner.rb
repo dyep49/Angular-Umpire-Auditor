@@ -14,7 +14,7 @@ module DataCleaner
 
     self.reset_calls(game)
 
-    Game.set_calls(game)
+    Game.set_calls(game)D
 
     day = Day.find_by(game_date: game.game_date)
     day.destroy!
