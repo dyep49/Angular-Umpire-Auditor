@@ -91,7 +91,8 @@ Returns all dates with a worst call
 
 ####/api/teams/
 THIS ENDPOINT DOES NOT EXIST YET
-Will retun json with all games organized by team
+
+Will return json with all games organized by team
 
 ####/api/teams/:id
 Returns team and stats about every game
