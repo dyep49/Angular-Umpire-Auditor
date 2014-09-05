@@ -2,7 +2,7 @@ After every game, the MLB releases an incredible amount of data. In fact, every 
 
 The application returns the worst call of the night, every night, chosen as such for being the called strike furthest from the strike zone. In addition, umpire performance statistics are calculated for each game and cumulatively. A task is run everyday at 8:30 AM eastern that updates and tweets the worst call from @umpireauditor. The gifs are not made programatically and are pretty much created whenever I wake up/get into work that day. 
 
-API Documentation (WORK IN PROGRESS)
+##API Documentation (WORK IN PROGRESS)
 
 Example application using API: www.businessweek.com/graphics/baseballs-worst-call-of-the-day/#/
 
