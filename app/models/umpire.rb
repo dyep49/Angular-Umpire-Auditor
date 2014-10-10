@@ -38,7 +38,7 @@ class Umpire < ActiveRecord::Base
   end
 
   def self.update_year_ranking(year)
-    file_path = "#{Rails.root}/public/csvs/tmp_umpire_rank_#{year}.csv}"
+    file_path = "#{Rails.root}/public/csvs/tmp_umpire_rank_#{year}.csv"
     Umpire.all.each do |umpire|
       CSV.open(file_path, "a") do |csv|
         games = umpire.games.select {|game| game.game_date.year == year}
