@@ -1,7 +1,14 @@
 class DaysController < ApplicationController
 
   def index
-    render json: Day.all
+    days = $redis.get("days")
+    
+    if days.nil?
+      days = Day.all.to_json
+      $redis.set("days", days)
+    end
+
+    render json: days
   end
 
 

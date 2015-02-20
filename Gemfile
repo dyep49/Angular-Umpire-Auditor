@@ -61,3 +61,7 @@ gem 'therubyracer'
 #Set appropriate headers
 gem 'rails-api'
 
+gem 'redis'
+gem 'redis-namespace'
+gem 'redis-rails'
+gem 'redis-rack-cache'
