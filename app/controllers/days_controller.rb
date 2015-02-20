@@ -6,12 +6,8 @@ class DaysController < ApplicationController
 
 
 	def dates
-    days = Day.all
-    day_array = []
-    days.each do |day|
-      day_array << day.game_date
-    end
-		render json: day_array
+    days = Day.pluck(:game_date)
+    render json: days
 	end
 
 end
