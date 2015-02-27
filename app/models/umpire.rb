@@ -1,4 +1,4 @@
-require 'csv'
+Gotrequire 'csv'
 
 class Umpire < ActiveRecord::Base
 	has_many :games
@@ -36,6 +36,20 @@ class Umpire < ActiveRecord::Base
     end
     File.rename(file_path, "#{Rails.root}/public/csvs/umpire_rank.csv")
   end
+
+  # def self.update_ranking(year = nil)
+  #   umpire_ranking = []
+  #   Umpire.all.each do |umpire|
+  #     games = year ? umpire.games.select {|game| game.game_date.year == year : umpire.games}
+  #     call_hash = umpire.evaluate(games)
+  #     unless call_hash[:total_calls] == 0
+  #       umpire_ranking << {name: umpire.name, correct: call_hash[:correct_calls], incorrect: call_hash[:incorrect_calls], total_calls: call_hash[:total_calls]}
+  #     end
+
+  #     $redis.set('umpire_ranking#{year}', umpire_ranking.to_json)
+  #   end
+
+  # end
 
   def self.update_year_ranking(year)
     file_path = "#{Rails.root}/public/csvs/tmp_umpire_rank_#{year}.csv"
