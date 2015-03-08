@@ -1,7 +1,7 @@
 class UmpiresController < ApplicationController
 
 def index
-	ranking = Umpire.read_umpire_csv
+	ranking = Umpire.get_umpire_ranking
 	render json: ranking
 end
 
@@ -15,7 +15,7 @@ end
 
 def show_year
   year = params[:year]
-  ranking = Umpire.read_umpire_csv(year: year)
+  ranking = Umpire.get_umpire_ranking(year)
 
   render json: ranking
 
