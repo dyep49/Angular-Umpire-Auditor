@@ -2,6 +2,11 @@ class UmpiresController < ApplicationController
 
 def index
 	ranking = Umpire.get_umpire_ranking
+
+  if ranking.nil?
+    ranking = Umpire.update_ranking
+  end
+
 	render json: ranking
 end
 
@@ -17,8 +22,11 @@ def show_year
   year = params[:year]
   ranking = Umpire.get_umpire_ranking(year)
 
-  render json: ranking
+  if ranking.nil?
+    ranking = Umpire.update_ranking(year)
+  end
 
+  render json: ranking
 end
 
 end
