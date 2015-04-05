@@ -56,6 +56,10 @@ class Umpire < ActiveRecord::Base
   def self.get_umpire_ranking(year = nil) 
     key = year ? "umpire_ranking#{year}" : "umpire_ranking"
     ranking = $redis.get(key)
+
+    Umpire.update_ranking(year) unless ranking
+
+
     JSON.load(ranking)
   end
 
