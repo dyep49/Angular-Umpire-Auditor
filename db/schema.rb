@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719175537) do
+ActiveRecord::Schema.define(version: 20150220194921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "days", force: true do |t|
+  create_table "days", force: :cascade do |t|
     t.datetime "game_date"
     t.string   "umpire"
     t.string   "home_team"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20140719175537) do
     t.string   "img_date"
   end
 
-  create_table "favorites", force: true do |t|
+  create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "team_id"
     t.integer  "pitcher_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140719175537) do
     t.datetime "updated_at"
   end
 
-  create_table "games", force: true do |t|
+  create_table "games", force: :cascade do |t|
     t.integer  "home_team_id"
     t.integer  "away_team_id"
     t.string   "gid"
@@ -63,12 +63,14 @@ ActiveRecord::Schema.define(version: 20140719175537) do
     t.string   "away_full_name"
   end
 
-  create_table "games_teams", force: true do |t|
+  add_index "games", ["umpire_id"], name: "index_games_on_umpire_id", using: :btree
+
+  create_table "games_teams", force: :cascade do |t|
     t.integer "game_id"
     t.integer "team_id"
   end
 
-  create_table "pitchers", force: true do |t|
+  create_table "pitchers", force: :cascade do |t|
     t.string   "name"
     t.string   "team"
     t.integer  "pid"
@@ -76,7 +78,7 @@ ActiveRecord::Schema.define(version: 20140719175537) do
     t.datetime "updated_at"
   end
 
-  create_table "pitches", force: true do |t|
+  create_table "pitches", force: :cascade do |t|
     t.string   "gid"
     t.datetime "date_string"
     t.string   "description"
@@ -104,7 +106,7 @@ ActiveRecord::Schema.define(version: 20140719175537) do
     t.text     "play"
   end
 
-  create_table "teams", force: true do |t|
+  create_table "teams", force: :cascade do |t|
     t.integer  "team_id"
     t.string   "abbreviation"
     t.string   "full_name"
@@ -118,14 +120,14 @@ ActiveRecord::Schema.define(version: 20140719175537) do
     t.string   "title"
   end
 
-  create_table "umpires", force: true do |t|
+  create_table "umpires", force: :cascade do |t|
     t.string  "name"
     t.integer "mlb_umpire_id"
   end
 
   add_index "umpires", ["mlb_umpire_id"], name: "my_index", unique: true, using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

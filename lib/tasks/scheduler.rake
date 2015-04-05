@@ -17,6 +17,8 @@ task :update_data => :environment do
   Umpire.update_year_ranking(Date.today.year)
   
   puts "updating data complete"
+
+  $redis.del days
 end
 
 task :tweet => :environment do 

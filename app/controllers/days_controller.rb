@@ -1,17 +1,20 @@
 class DaysController < ApplicationController
 
   def index
-    render json: Day.all
+    days = $redis.get("days")
+    
+    if days.nil?
+      days = Day.all.to_json
+      $redis.set("days", days)
+    end
+
+    render json: days
   end
 
 
 	def dates
-    days = Day.all
-    day_array = []
-    days.each do |day|
-      day_array << day.game_date
-    end
-		render json: day_array
+    days = Day.pluck(:game_date)
+    render json: days
 	end
 
 end
