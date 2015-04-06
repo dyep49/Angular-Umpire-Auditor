@@ -3,7 +3,7 @@ class UmpiresController < ApplicationController
 def index
 	ranking = Umpire.get_umpire_ranking
 
-  if ranking.nil?
+  if ranking.to_a.empty?
     ranking = Umpire.update_ranking
   end
 
@@ -19,10 +19,10 @@ def show
 end
 
 def show_year
-  year = params[:year]
+  year = params[:year].to_i
   ranking = Umpire.get_umpire_ranking(year)
 
-  if ranking.nil?
+  if ranking.to_a.empty?
     ranking = Umpire.update_ranking(year)
   end
 
