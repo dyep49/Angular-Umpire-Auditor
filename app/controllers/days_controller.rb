@@ -3,7 +3,7 @@ class DaysController < ApplicationController
   def index
     days = $redis.get("days")
     
-    if days.nil?
+    if days.to_a.nil?
       days = Day.all.to_json
       $redis.set("days", days)
     end

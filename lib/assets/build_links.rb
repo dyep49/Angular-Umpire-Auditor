@@ -2,7 +2,7 @@ module BuildLinks
 
 	ROOT_YEAR = Date.today.year
 
-	URL_ROOT = "http://gd2.mlb.com/components/game/mlb/year_2014"
+	URL_ROOT = "http://gd2.mlb.com/components/game/mlb/year_#{ROOT_YEAR}"
 
 	def self.gid_info
 		gids = []
