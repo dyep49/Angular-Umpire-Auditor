@@ -14,7 +14,7 @@ task :update_data => :environment do
 
   Day.create_days(games)
   Umpire.update_ranking
-  Umpire.update_year_ranking(Date.today.year)
+  Umpire.update_ranking(Date.today.year)
   
   puts "updating data complete"
 
