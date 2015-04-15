@@ -10,7 +10,6 @@ namespace :db do
 
     days.each do |day|
       gids = BuildLinks.parse_gids_by_date(day).uniq
-      binding.pry
       gids.each do |gid|
         SeedHelper.seed_gid(gid)
       end
