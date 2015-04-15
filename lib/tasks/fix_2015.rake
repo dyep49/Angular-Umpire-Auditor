@@ -6,8 +6,8 @@ require 'pry'
 namespace :db do
   desc "fix 2015 data"
   task fix_2015: :environment do 
-    opening_day = Date.new(2015, 4, 9)
-    last_day = Date.new(2015, 4, 10)
+    opening_day = Date.new(2015, 4, 5)
+    last_day = Date.new(2015, 4, 13)
     days = (opening_day..last_day)
 
     days.each do |day|
