@@ -1,8 +1,6 @@
 require "#{Rails.root}/lib/assets/seed_helper.rb"
 require "#{Rails.root}/lib/assets/build_links.rb"
 
-require 'pry'
-
 namespace :db do
   desc "fix 2015 data"
   task fix_2015: :environment do 
