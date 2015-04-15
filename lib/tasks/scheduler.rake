@@ -2,12 +2,14 @@ desc "This task is called by the Heroku scheduler add-on"
 task :update_data => :environment do
   puts "Updating data"
 
-  gids = BuildLinks.last_night.uniq
+  yesterday = Date.today.prev_day
+
+  gids = BuildLinks.parse_gids_by_date(yesterday).uniq
   gids.each do |gid|
     SeedHelper.seed_gid(gid)
   end
 
-  games = Game.where(game_date: Date.today.prev_day)
+  games = Game.where(game_date: yesterday)
   games.each do |game|
     Game.set_calls(game)
   end

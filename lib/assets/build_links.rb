@@ -28,9 +28,8 @@ module BuildLinks
 		gids = response.scan(/gid[^\/]*/)
 	end
 
-	def self.last_night
+	def self.parse_gids_by_date(date)
 		gid_url_array = []
-		date = Date.today.prev_day
 		month = sprintf '%02d', date.month
 		day = sprintf '%02d', date.day
 		day_url = "#{URL_ROOT}/month_#{month}/day_#{day}"
