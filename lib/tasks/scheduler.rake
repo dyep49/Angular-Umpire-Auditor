@@ -20,7 +20,7 @@ task :update_data => :environment do
   
   puts "updating data complete"
 
-  $redis.del days
+  $redis.del 'days'
 end
 
 task :tweet => :environment do 
