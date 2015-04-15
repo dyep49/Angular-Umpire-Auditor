@@ -30,7 +30,7 @@ module BuildLinks
 
 	def self.last_night
 		gid_url_array = []
-		date = Date.today.prev_day
+		date = Date.today.prev_day.prev_day
 		month = sprintf '%02d', date.month
 		day = sprintf '%02d', date.day
 		day_url = "#{URL_ROOT}/month_#{month}/day_#{day}"
