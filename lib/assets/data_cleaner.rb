@@ -20,6 +20,8 @@ module DataCleaner
     day.destroy!
 
     Day.create_days([game])
+
+    $redis.del 'days'
   end
 
   def self.reset_calls(game)

@@ -40,5 +40,13 @@ module BuildLinks
 		gid_url_array
 	end
 
+	def self.date_to_gids_url(date)
+		month = sprintf '%02d', date.month
+		day = sprintf '%02d', date.day
+		day_url = "#{URL_ROOT}/month_#{month}/day_#{day}"
+	end
+
+
+
 end
 

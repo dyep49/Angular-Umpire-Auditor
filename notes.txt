@@ -48,3 +48,11 @@ April 11, 2013
 -Pithc 455885 swinging strike not a called strike
 -CLEANED
 
+April 13, 2015
+-Dbacks vs Padres
+-Pitch 2183463
+-sv_id 150413_203010
+-CLEANED
+
+=> #<Pitch id: 2248028, gid: "gid_2015_05_01_oakmlb_texmlb_1", date_string: "2015-05-01 00:00:00", description: "Called Strike", pid: 107, x_location: -1.421, y_location: 1.443, sz_top: 3.21, sz_bottom: 1.47, sv_id: "150501_193853", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.713, distance_missed_y: 0.027, total_distance_missed: 0.74, pitcher_id: nil, mlb_umpire_id: 427144, batter_id: nil, game_id: 7794, ball_count: 1, strike_count: 2, outs: 0, inning_half: "bottom", inning: 2, play: "Shin-Soo Choo called out on strikes.">
+-Swinging strike

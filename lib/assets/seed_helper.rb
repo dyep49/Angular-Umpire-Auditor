@@ -181,7 +181,6 @@ module SeedHelper
 	    pitch_array << new_pitch
 	  end
 
-
 	  pitch_array
 	end
 

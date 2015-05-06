@@ -46,7 +46,6 @@ gem 'rails_12factor', group: :production
 # gem 'debugger', group: [:development, :test]
 
 
-gem 'rspec-rails'
 gem 'nokogiri'
 gem 'httparty'
 gem 'angularjs-rails'
@@ -65,3 +64,10 @@ gem 'redis'
 gem 'redis-namespace'
 gem 'redis-rails'
 gem 'redis-rack-cache'
+
+
+group :development, :test do 
+  gem 'vcr'
+  gem 'webmock'
+  gem 'rspec-rails'
+end
