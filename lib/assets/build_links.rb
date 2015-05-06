@@ -23,16 +23,13 @@ module BuildLinks
 	end
 
 	def self.parse_gids(day_url)
-		puts day_url
 		response = HTTParty.get("#{day_url}")
 		gids = response.scan(/gid[^\/]*/)
 	end
 
 	def self.parse_gids_by_date(date)
 		gid_url_array = []
-		month = sprintf '%02d', date.month
-		day = sprintf '%02d', date.day
-		day_url = "#{URL_ROOT}/month_#{month}/day_#{day}"
+		day_url = self.date_to_gids_url(date)
 		gids = self.parse_gids(day_url)
 		gids.each do |gid|
 			gid_url_array << "#{day_url}/#{gid}"

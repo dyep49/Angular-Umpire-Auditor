@@ -1,0 +1,170 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://gd2.mlb.com/components/game/mlb/year_2015/month_05/day_03
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Server:
+      - Apache/2.0.65 (Unix)
+      Location:
+      - http://gd2.mlb.com/components/game/mlb/year_2015/month_05/day_03/
+      Cache-Control:
+      - max-age=15
+      Expires:
+      - Wed, 06 May 2015 03:37:54 GMT
+      Content-Type:
+      - text/html; charset=iso-8859-1
+      Content-Length:
+      - '273'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 06 May 2015 03:37:39 GMT
+      X-Varnish:
+      - '1725722335'
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Varnish-Cache:
+      - MISS
+      X-Served-By:
+      - w1cache12.web1.mlbam.net
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+        <html><head>
+        <title>301 Moved Permanently</title>
+        </head><body>
+        <h1>Moved Permanently</h1>
+        <p>The document has moved <a href="http://gd2.mlb.com/components/game/mlb/year_2015/month_05/day_03/">here</a>.</p>
+        </body></html>
+    http_version: 
+  recorded_at: Wed, 06 May 2015 03:37:39 GMT
+- request:
+    method: get
+    uri: http://gd2.mlb.com/components/game/mlb/year_2015/month_05/day_03/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache/2.0.65 (Unix)
+      Expires:
+      - Wed, 06 May 2015 03:37:54 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Edge-Control:
+      - max-age=15
+      Cache-Control:
+      - max-age=15
+      Content-Type:
+      - text/html;charset=ISO-8859-1
+      Content-Length:
+      - '3765'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 06 May 2015 03:37:39 GMT
+      X-Varnish:
+      - '1329121063'
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Varnish-Cache:
+      - MISS
+      X-Served-By:
+      - w1cache11.web1.mlbam.net
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+        <html>
+         <head>
+          <title>Index of /components/game/mlb/year_2015/month_05/day_03</title>
+         </head>
+         <body>
+        <h1>Index of /components/game/mlb/year_2015/month_05/day_03</h1>
+        <ul><li><a href="/components/game/mlb/year_2015/month_05/"> Parent Directory</a></li>
+        <li><a href="batters/"> batters/</a></li>
+        <li><a href="epg.xml"> epg.xml</a></li>
+        <li><a href="gid_2015_05_03_anamlb_sfnmlb_1/"> gid_2015_05_03_anamlb_sfnmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_arimlb_lanmlb_1/"> gid_2015_05_03_arimlb_lanmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_chamlb_minmlb_1/"> gid_2015_05_03_chamlb_minmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_cinmlb_atlmlb_1/"> gid_2015_05_03_cinmlb_atlmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_colmlb_sdnmlb_1/"> gid_2015_05_03_colmlb_sdnmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_detmlb_kcamlb_1/"> gid_2015_05_03_detmlb_kcamlb_1/</a></li>
+        <li><a href="gid_2015_05_03_milmlb_chnmlb_1/"> gid_2015_05_03_milmlb_chnmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_nyamlb_bosmlb_1/"> gid_2015_05_03_nyamlb_bosmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_oakmlb_texmlb_1/"> gid_2015_05_03_oakmlb_texmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_phimlb_miamlb_1/"> gid_2015_05_03_phimlb_miamlb_1/</a></li>
+        <li><a href="gid_2015_05_03_pitmlb_slnmlb_1/"> gid_2015_05_03_pitmlb_slnmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_seamlb_houmlb_1/"> gid_2015_05_03_seamlb_houmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_tbamlb_balmlb_1/"> gid_2015_05_03_tbamlb_balmlb_1/</a></li>
+        <li><a href="gid_2015_05_03_tormlb_clemlb_1/"> gid_2015_05_03_tormlb_clemlb_1/</a></li>
+        <li><a href="gid_2015_05_03_wasmlb_nynmlb_1/"> gid_2015_05_03_wasmlb_nynmlb_1/</a></li>
+        <li><a href="grid.json"> grid.json</a></li>
+        <li><a href="grid.xml"> grid.xml</a></li>
+        <li><a href="grid_ce.json"> grid_ce.json</a></li>
+        <li><a href="grid_ce.xml"> grid_ce.xml</a></li>
+        <li><a href="grid_int.json"> grid_int.json</a></li>
+        <li><a href="grid_int.xml"> grid_int.xml</a></li>
+        <li><a href="master_scoreboard.json"> master_scoreboard.json</a></li>
+        <li><a href="master_scoreboard.xml"> master_scoreboard.xml</a></li>
+        <li><a href="media/"> media/</a></li>
+        <li><a href="miniscoreboard.json"> miniscoreboard.json</a></li>
+        <li><a href="miniscoreboard.xml"> miniscoreboard.xml</a></li>
+        <li><a href="mlbtv_japan.xml"> mlbtv_japan.xml</a></li>
+        <li><a href="mobile_epg.xml"> mobile_epg.xml</a></li>
+        <li><a href="mobile_inmarket_epg.xml"> mobile_inmarket_epg.xml</a></li>
+        <li><a href="multi_angle_epg.json"> multi_angle_epg.json</a></li>
+        <li><a href="multi_angle_epg.xml"> multi_angle_epg.xml</a></li>
+        <li><a href="pitchers/"> pitchers/</a></li>
+        <li><a href="pitching_staff/"> pitching_staff/</a></li>
+        <li><a href="playertracker.xml"> playertracker.xml</a></li>
+        <li><a href="scoreboard.xml"> scoreboard.xml</a></li>
+        <li><a href="scoreboard_android.xml"> scoreboard_android.xml</a></li>
+        <li><a href="scoreboard_android_es.xml"> scoreboard_android_es.xml</a></li>
+        <li><a href="scoreboard_blackberry.xml"> scoreboard_blackberry.xml</a></li>
+        <li><a href="scoreboard_blackberry_es.xml"> scoreboard_blackberry_es.xml</a></li>
+        <li><a href="scoreboard_ipad.xml"> scoreboard_ipad.xml</a></li>
+        <li><a href="scoreboard_ipad_6.xml"> scoreboard_ipad_6.xml</a></li>
+        <li><a href="scoreboard_ipad_es.xml"> scoreboard_ipad_es.xml</a></li>
+        <li><a href="scoreboard_iphone.xml"> scoreboard_iphone.xml</a></li>
+        <li><a href="scoreboard_iphone_6.xml"> scoreboard_iphone_6.xml</a></li>
+        <li><a href="scoreboard_iphone_es.xml"> scoreboard_iphone_es.xml</a></li>
+        <li><a href="scoreboard_mac.xml"> scoreboard_mac.xml</a></li>
+        <li><a href="scoreboard_windows.xml"> scoreboard_windows.xml</a></li>
+        <li><a href="uber_scoreboard.xml"> uber_scoreboard.xml</a></li>
+        </ul>
+        </body></html>
+    http_version: 
+  recorded_at: Wed, 06 May 2015 03:37:39 GMT
+recorded_with: VCR 2.9.3
