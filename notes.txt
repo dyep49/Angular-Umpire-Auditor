@@ -56,3 +56,6 @@ April 13, 2015
 
 => #<Pitch id: 2248028, gid: "gid_2015_05_01_oakmlb_texmlb_1", date_string: "2015-05-01 00:00:00", description: "Called Strike", pid: 107, x_location: -1.421, y_location: 1.443, sz_top: 3.21, sz_bottom: 1.47, sv_id: "150501_193853", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.713, distance_missed_y: 0.027, total_distance_missed: 0.74, pitcher_id: nil, mlb_umpire_id: 427144, batter_id: nil, game_id: 7794, ball_count: 1, strike_count: 2, outs: 0, inning_half: "bottom", inning: 2, play: "Shin-Soo Choo called out on strikes.">
 -Swinging strike
+
+=> #<Pitch id: 2261415, gid: "gid_2015_05_05_sdnmlb_sfnmlb_1", date_string: "2015-05-05 00:00:00", description: "Called Strike", pid: 198, x_location: -0.799, y_location: 4.005, sz_top: 3.22, sz_bottom: 1.44, sv_id: "150505_200630", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.091, distance_missed_y: 0.785, total_distance_missed: 0.876, pitcher_id: nil, mlb_umpire_id: 427128, batter_id: nil, game_id: 7842, ball_count: 1, strike_count: 0, outs: 0, inning_half: "top", inning: 4, play: "Yangervis Solarte grounds out, second baseman Joe ...">
+-y coord wrong
