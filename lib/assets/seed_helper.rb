@@ -1,4 +1,5 @@
 module SeedHelper
+	#needs a better check for rainout
 
 	# Regular season, all star, divisional, league, world series
 	GAME_TYPES = ["R", "A", "F", "D", "L", "W"]
@@ -39,22 +40,27 @@ module SeedHelper
 		end
 	end
 
+	#TODO: Rename to get_game_type
 	def self.set_game_type(url)
 		response = HTTParty.get(url)
 		game_type = response["data"]["game"]["game_type"]
 	end
 
-	def self.set_umpire(umpire_url) 
-		response = HTTParty.get(umpire_url)
+	def self.get_umpire_info_from_gameday(players_url)
+		response = HTTParty.get(players_url)
+		#TODO: Maybe change this to search for umpire with home position instead of assuming array position
 		umpire_info = response["game"]["umpires"]["umpire"][0]
-		umpire = Umpire.find_by(mlb_umpire_id: umpire_info["id"])
-		unless umpire 
+	end
+
+	def self.set_umpire(umpire_info) 
+		Umpire.find_by(mlb_umpire_id: umpire_info["id"]) || self.create_umpire(umpire_info)
+	end
+
+	def self.create_umpire(umpire_info)
 			umpire = Umpire.new
 			umpire.name = umpire_info["name"]
 			umpire.mlb_umpire_id = umpire_info["id"]
 			umpire.save!
-		end
-		umpire
 	end
 
 	def self.set_game(game_url, umpire)
@@ -180,6 +186,7 @@ module SeedHelper
 	    new_pitch.save!
 	    pitch_array << new_pitch
 	  end
+
 
 	  pitch_array
 	end

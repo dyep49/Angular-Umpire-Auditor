@@ -71,3 +71,5 @@ group :development, :test do
   gem 'webmock'
   gem 'rspec-rails'
 end
+
+gem 'seed_dump'

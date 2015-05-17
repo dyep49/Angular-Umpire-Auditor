@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_14/gid_2015_04_14_nyamlb_balmlb_1/linescore.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache/2.0.65 (Unix)
+      Last-Modified:
+      - Tue, 21 Apr 2015 14:25:31 GMT
+      Etag:
+      - '"108b-5143cd19eecc0"'
+      Expires:
+      - Wed, 13 May 2015 04:25:09 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Edge-Control:
+      - max-age=15
+      Cache-Control:
+      - max-age=15
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '4235'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 13 May 2015 04:24:54 GMT
+      X-Varnish:
+      - '2616990476'
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Varnish-Cache:
+      - MISS
+      X-Served-By:
+      - w1cache10.web1.mlbam.net
+    body:
+      encoding: UTF-8
+      string: '{ "subject": "linescore_mlb_2015_04_14_gid_2015_04_14_nyamlb_balmlb_1",
+        "copyright" : "Copyright 2015 MLB Advanced Media, L.P.  Use of any content
+        on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt",
+        "data" : {"game":{"home_team_runs":"4","game_type":"R","double_header_sw":"N","location":"Baltimore","home_recap_link":"/mlb/gameday/index.jsp?gid=2015_04_14_nyamlb_balmlb_1&mode=recap&c_id=bal","away_time":"7:05","away_preview_link":"/mlb/gameday/index.jsp?gid=2015_04_14_nyamlb_balmlb_1&mode=preview&c_id=mlb","time":"7:05","top_inning":"Y","home_time":"7:05","home_team_name":"Orioles","ind":"F","original_date":"2015/04/14","home_team_city":"Baltimore","venue_id":"2","gameday_sw":"P","away_win":"3","home_games_back_wildcard":"1.0","save_pitcher":{"last":"Britton","name_display_roster":"Britton","era":"2.08","id":"502154","first_name":"Zach","s_losses":"","s_era":"","saves":"2","last_name":"Britton","losses":"0","first":"Zach","s_wins":"","wins":"0"},"away_team_id":"147","tz_hm_lg_gen":"ET","status":"Final","home_loss":"4","home_games_back":"2.0","home_code":"bal","away_sport_code":"mlb","home_win":"4","time_hm_lg":"7:05","away_name_abbrev":"NYY","league":"AA","time_zone_aw_lg":"-4","away_games_back":"3.0","home_file_code":"bal","game_data_directory":"/components/game/mlb/year_2015/month_04/day_14/gid_2015_04_14_nyamlb_balmlb_1","time_zone":"ET","away_league_id":"103","preview":"/mlb/gameday/index.jsp?gid=2015_04_14_nyamlb_balmlb_1&mode=preview&c_id=mlb","away_recap_link":"/mlb/gameday/index.jsp?gid=2015_04_14_nyamlb_balmlb_1&mode=recap&c_id=bal","home_team_id":"110","time_aw_lg":"7:05","away_team_city":"NY
+        Yankees","day":"TUE","tbd_flag":"N","tz_aw_lg_gen":"ET","away_code":"nya","winning_pitcher":{"id":"456068","s_losses":"","first_name":"Miguel","s_era":"","last":"Gonzalez","last_name":"Gonzalez","losses":"1","era":"1.42","name_display_roster":"Gonzalez,
+        M","first":"Miguel","s_wins":"","wins":"1"},"game_media":{"media":{"free":"NO","title":"NYY
+        @ BAL","thumbnail":"http://mediadownloads.mlb.com/mlbam/preview/nyabal_413762_th_7_preview.jpg","media_state":"media_archive","start":"2015-04-14T19:05:00-0400","has_mlbtv":"true","calendar_event_id":"14-413762-2015-04-14","type":"game"}},"game_nbr":"1","time_date_aw_lg":"2015/04/14
+        7:05","away_games_back_wildcard":"2.0","scheduled_innings":"9","linescore":[{"away_inning_runs":"0","inning":"1","home_inning_runs":"1"},{"away_inning_runs":"0","inning":"2","home_inning_runs":"0"},{"away_inning_runs":"0","inning":"3","home_inning_runs":"1"},{"away_inning_runs":"0","inning":"4","home_inning_runs":"1"},{"away_inning_runs":"0","inning":"5","home_inning_runs":"0"},{"away_inning_runs":"1","inning":"6","home_inning_runs":"0"},{"away_inning_runs":"0","inning":"7","home_inning_runs":"1"},{"away_inning_runs":"2","inning":"8","home_inning_runs":"0"},{"away_inning_runs":"0","inning":"9","home_inning_runs":""}],"venue_w_chan_loc":"USMD0018","first_pitch_et":"","away_team_name":"Yankees","gameday_link":"2015_04_14_nyamlb_balmlb_1","outs":"3","time_date_hm_lg":"2015/04/14
+        7:05","id":"2015/04/14/nyamlb-balmlb-1","home_name_abbrev":"BAL","wrapup_link":"/mlb/gameday/index.jsp?gid=2015_04_14_nyamlb_balmlb_1&mode=wrap&c_id=mlb","tiebreaker_sw":"N","balls":"0","ampm":"PM","home_division":"E","home_time_zone":"ET","tv_station":"MASN
+        2, MLBN","away_team_errors":"2","away_team_runs":"3","note":"","away_time_zone":"ET","hm_lg_ampm":"PM","home_sport_code":"mlb","time_date":"2015/04/14
+        7:05","inning":"9","home_team_hits":"7","inning_state":"","home_ampm":"PM","game_pk":"413762","photos_link":"/mlb/gameday/index.jsp?gid=2015_04_14_nyamlb_balmlb_1&mode=photos","venue":"Oriole
+        Park at Camden Yards","home_league_id":"103","away_team_hits":"6","away_loss":"5","home_team_errors":"1","away_file_code":"nyy","losing_pitcher":{"id":"282332","s_losses":"","first_name":"CC","s_era":"","last":"Sabathia","last_name":"Sabathia","losses":"2","era":"5.68","name_display_roster":"Sabathia","first":"CC","s_wins":"","wins":"0"},"strikes":"0","aw_lg_ampm":"PM","home_preview_link":"/mlb/gameday/index.jsp?gid=2015_04_14_nyamlb_balmlb_1&mode=preview&c_id=mlb","time_zone_hm_lg":"-4","away_ampm":"PM","away_division":"E"}}}'
+    http_version: 
+  recorded_at: Wed, 13 May 2015 04:24:54 GMT
+recorded_with: VCR 2.9.3

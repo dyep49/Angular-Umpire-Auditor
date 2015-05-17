@@ -59,3 +59,8 @@ April 13, 2015
 
 => #<Pitch id: 2261415, gid: "gid_2015_05_05_sdnmlb_sfnmlb_1", date_string: "2015-05-05 00:00:00", description: "Called Strike", pid: 198, x_location: -0.799, y_location: 4.005, sz_top: 3.22, sz_bottom: 1.44, sv_id: "150505_200630", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.091, distance_missed_y: 0.785, total_distance_missed: 0.876, pitcher_id: nil, mlb_umpire_id: 427128, batter_id: nil, game_id: 7842, ball_count: 1, strike_count: 0, outs: 0, inning_half: "top", inning: 4, play: "Yangervis Solarte grounds out, second baseman Joe ...">
 -y coord wrong
+
+=> #<Pitch id: 2280490, gid: "gid_2015_05_10_lanmlb_colmlb_1", date_string: "2015-05-10 00:00:00", description: "Called Strike", pid: 51, x_location: 1.503, y_location: 6.481, sz_top: 3.38, sz_bottom: 1.56, sv_id: "150510_142756", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.795, distance_missed_y: 3.101, total_distance_missed: 3.896, pitcher_id: nil, mlb_umpire_id: 429805, batter_id: nil, game_id: 7911, ball_count: 2, strike_count: 1, outs: 2, inning_half: "bottom", inning: 1, play: "Troy Tulowitzki strikes out swinging.">
+-x and y wrong
+
+=> #<Pitch id: 2294934, gid: "gid_2015_05_14_minmlb_detmlb_1", date_string: "2015-05-14 00:00:00", description: "Called Strike", pid: 58, x_location: 0.978, y_location: 4.617, sz_top: 3.68, sz_bottom: 1.67, sv_id: "150514_132312", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.27, distance_missed_y: 0.937, total_distance_missed: 1.207, pitcher_id: nil, mlb_umpire_id: 428442, batter_id: nil, game_id: 7962, ball_count: 0, strike_count: 0, outs: 1, inning_half: "bottom", inning: 1, play: "Yoenis Cespedes out on a sacrifice fly to center f...">
