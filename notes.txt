@@ -64,3 +64,9 @@ April 13, 2015
 -x and y wrong
 
 => #<Pitch id: 2294934, gid: "gid_2015_05_14_minmlb_detmlb_1", date_string: "2015-05-14 00:00:00", description: "Called Strike", pid: 58, x_location: 0.978, y_location: 4.617, sz_top: 3.68, sz_bottom: 1.67, sv_id: "150514_132312", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.27, distance_missed_y: 0.937, total_distance_missed: 1.207, pitcher_id: nil, mlb_umpire_id: 428442, batter_id: nil, game_id: 7962, ball_count: 0, strike_count: 0, outs: 1, inning_half: "bottom", inning: 1, play: "Yoenis Cespedes out on a sacrifice fly to center f...">
+
+=> #<Day id: 682, game_date: "2015-05-25 00:00:00", umpire: "Scott Barry", home_team: "San Diego Padres", away_team: "Los Angeles Angels", total_distance_missed: 2.467, umpire_id: 75, created_at: "2015-05-26 08:05:29", updated_at: "2015-05-26 08:05:29", inning: "6", ball_count: 0, strike_count: 0, outs: 1, inning_half: "top", pitch_id: 2338797, play: "Matt Kemp flies out sharply to center fielder Mike...", img_date: "2015-05-25">
+
+=> #<Pitch id: 2336863, gid: "gid_2015_05_25_chamlb_tormlb_1", date_string: "2015-05-25 00:00:00", description: "Called Strike", pid: 154, x_location: -1.368, y_location: 2.24, sz_top: 3.34, sz_bottom: 1.54, sv_id: "150525_194700", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.66, distance_missed_y: 0.0, total_distance_missed: 0.66, pitcher_id: nil, mlb_umpire_id: 427164, batter_id: nil, game_id: 8113, ball_count: 0, strike_count: 0, outs: 1, inning_half: "top", inning: 3, play: "Emilio Bonifacio strikes out swinging.">
+
+NEED TO HANDLE FUCKED UP PITCHES---LIKE 2336863

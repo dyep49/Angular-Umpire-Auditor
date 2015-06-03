@@ -211,23 +211,20 @@ module SeedHelper
 	end
 
 	def self.parse_pitch(pitch)
-	  begin
-	    {
-	      description: pitch["des"],
-	      pid: pitch["id"],
-	      x_location: pitch["px"],
-	      y_location: pitch["pz"],
-	      sz_top: pitch["sz_top"],
-	      sz_bottom: pitch["sz_bot"],
-	      sv_id: pitch["sv_id"],
-	      type_id: pitch["type"],
-	      missing_data: false
-	    }
-	  rescue Exception => e
-	    puts e.message
-	    puts e.backtrace.inspect
-	    {missing_data: true}
-	  end
-	end
+        parsed_pitch = {
+          description: pitch["des"],
+          pid: pitch["id"],
+          x_location: pitch["px"],
+          y_location: pitch["pz"],
+          sz_top: pitch["sz_top"],
+          sz_bottom: pitch["sz_bot"],
+          sv_id: pitch["sv_id"],
+          type_id: pitch["type"]
+        }
+
+        parsed_pitch[:missing_data] = !parsed_pitch.values.all? 
+
+        parsed_pitch 
+    end
 
 end
