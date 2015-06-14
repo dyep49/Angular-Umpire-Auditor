@@ -26,7 +26,8 @@ end
 task :tweet => :environment do 
   last_day = Day.order(:game_date).last
 
-  if last_day.game_date == Date.today.prev_day
+  #Don't tweet if the data seems weird
+  if last_day.game_date == Date.today.prev_day && last_day.total_distance_missed < 1.2
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV["TWITTER_API_KEY"]
       config.consumer_secret     = ENV["TWITTER_API_SECRET_KEY"]
