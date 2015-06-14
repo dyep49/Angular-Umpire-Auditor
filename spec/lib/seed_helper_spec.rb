@@ -1,4 +1,4 @@
-require 'spec_helper'
+  require 'spec_helper'
 require 'assets/seed_helper'
 
 describe SeedHelper do 
@@ -192,11 +192,11 @@ describe SeedHelper do
          :missing_data=>true}
       } 
 
-    it "returns a pitch hash with missing data" do 
-        parsed_pitch = SeedHelper.parse_pitch(invalid_pitch)
-        expect(parsed_pitch).to eq(parsed_invalid_pitch) 
-    end    
-  end
+      it "returns a pitch hash with missing data" do 
+          parsed_pitch = SeedHelper.parse_pitch(invalid_pitch)
+          expect(parsed_pitch).to eq(parsed_invalid_pitch) 
+      end    
+    end
   end
 
 end

@@ -52,6 +52,9 @@ class Day < ActiveRecord::Base
 	# 	miss_inches = (total_distance_missed*12).round(2)
 	# 	"With a #{ball_count}-#{strike_count} count in the #{inning_half} of the #{inning_int.ordinalize}, umpire #{umpire} called a strike on a pitch that missed the strike zone by #{miss_inches} inches"
 	# end
+	def to_client_json
+		{homeTeam: home_team, awayTeam: away_team, game: game_date, imgDate: img_date, pitch: total_distance_missed, umpire: umpire, umpire_id: umpire_id, ballCount: ball_count, strikeCount: strike_count, inning: inning, inningHalf: inning_half, outs: outs}
+	end
 
 	def tweet
 		home = Team.find_by(full_name: home_team).title
