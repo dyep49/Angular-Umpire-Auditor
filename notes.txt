@@ -70,3 +70,27 @@ April 13, 2015
 => #<Pitch id: 2336863, gid: "gid_2015_05_25_chamlb_tormlb_1", date_string: "2015-05-25 00:00:00", description: "Called Strike", pid: 154, x_location: -1.368, y_location: 2.24, sz_top: 3.34, sz_bottom: 1.54, sv_id: "150525_194700", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.66, distance_missed_y: 0.0, total_distance_missed: 0.66, pitcher_id: nil, mlb_umpire_id: 427164, batter_id: nil, game_id: 8113, ball_count: 0, strike_count: 0, outs: 1, inning_half: "top", inning: 3, play: "Emilio Bonifacio strikes out swinging.">
 
 NEED TO HANDLE FUCKED UP PITCHES---LIKE 2336863
+
+=> #<Pitch id: 2348573, gid: "gid_2015_05_30_detmlb_anamlb_1", date_string: "2015-05-30 00:00:00", description: "Called Strike", pid: 263, x_location: 2.58, y_location: 3.771, sz_top: 3.71, sz_bottom: 1.78, sv_id: "150530_202045", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 1.872, distance_missed_y: 0.061, total_distance_missed: 1.933, pitcher_id: nil, mlb_umpire_id: 427093, batter_id: nil, game_id: 8154, ball_count: 0, strike_count: 0, outs: 2, inning_half: "top", inning: 4, play: "Jose Iglesias lines out to center fielder Mike Tro...">
+
+=> #<Pitch id: 2367870, gid: "gid_2015_06_04_cinmlb_phimlb_1", date_string: "2015-06-04 00:00:00", description: "Called Strike", pid: 361, x_location: -0.534, y_location: 0.94, sz_top: 3.69, sz_bottom: 1.72, sv_id: "150604_204331", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.0, distance_missed_y: 0.78, total_distance_missed: 0.78, pitcher_id: nil, mlb_umpire_id: 427206, batter_id: nil, game_id: 8223, ball_count: 2, strike_count: 2, outs: 2, inning_half: "top", inning: 6, play: "Joey Votto called out on strikes.">
+swing
+
+=> #<Pitch id: 2392264, gid: "gid_2015_06_10_texmlb_oakmlb_1", date_string: "2015-06-10 00:00:00", description: "Called Strike", pid: 425, x_location: -2.369, y_location: 2.089, sz_top: 3.47, sz_bottom: 1.53, sv_id: "150610_210436", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 1.661, distance_missed_y: 0.0, total_distance_missed: 1.661, pitcher_id: nil, mlb_umpire_id: 482641, batter_id: nil, game_id: 8311, ball_count: 2, strike_count: 1, outs: 2, inning_half: "top", inning: 6, play: "Prince Fielder strikes out swinging.">
+
+=> #<Pitch id: 2392235, gid: "gid_2015_06_10_texmlb_oakmlb_1", date_string: "2015-06-10 00:00:00", description: "Called Strike", pid: 366, x_location: 2.363, y_location: 1.623, sz_top: 3.17, sz_bottom: 1.4, sv_id: "150610_204823", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 1.655, distance_missed_y: 0.0, total_distance_missed: 1.655, pitcher_id: nil, mlb_umpire_id: 482641, batter_id: nil, game_id: 8311, ball_count: 2, strike_count: 1, outs: 1, inning_half: "top", inning: 5, play: "Adam Rosales walks.   Leonys Martin to 2nd.">
+
+=> #<Day id: 702, game_date: "2015-06-10 00:00:00", umpire: "Adrian Johnson", home_team: "Oakland Athletics", away_team: "Texas Rangers", total_distance_missed: 1.121, umpire_id: 77, created_at: "2015-06-12 03:02:20", updated_at: "2015-06-12 03:02:20", inning: "5", ball_count: 0, strike_count: 0, outs: 0, inning_half: "bottom", pitch_id: 2392245, play: "Billy Burns grounds out, shortstop Elvis Andrus to...", img_date: "2015-06-10">
+
+
+Entire game seems fucked
+
+=> #<Day id: 701, game_date: "2015-06-10 00:00:00", umpire: "Adrian Johnson", home_team: "Oakland Athletics", away_team: "Texas Rangers", total_distance_missed: 1.124, umpire_id: 77, created_at: "2015-06-12 02:59:39", updated_at: "2015-06-12 02:59:39", inning: "5", ball_count: 2, strike_count: 0, outs: 1, inning_half: "bottom", pitch_id: 2392249, play: "Josh Reddick grounds out, first baseman Mitch More...", img_date: "2015-06-10">
+
+=> #<Day id: 708, game_date: "2015-06-10 00:00:00", umpire: "Andy Fletcher", home_team: "San Diego Padres", away_team: "Atlanta Braves", total_distance_missed: 0.632, umpire_id: 27, created_at: "2015-06-12 03:18:12", updated_at: "2015-06-12 03:18:12", inning: "7", ball_count: 0, strike_count: 0, outs: 1, inning_half: "bottom", pitch_id: 2391106, play: "Freddie Freeman flies out to left fielder Justin U...", img_date: "2015-06-10">
+
+Check Swing
+
+=> #<Pitch id: 2400874, gid: "gid_2015_06_13_clemlb_detmlb_1", date_string: "2015-06-13 00:00:00", description: "Called Strike", pid: 81, x_location: 0.759, y_location: 0.994, sz_top: 3.33, sz_bottom: 1.55, sv_id: "150613_163428", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.051, distance_missed_y: 0.556, total_distance_missed: 0.607, pitcher_id: nil, mlb_umpire_id: 427128, batter_id: nil, game_id: 8341, ball_count: 0, strike_count: 1, outs: 0, inning_half: "top", inning: 2, play: "Brandon Moss strikes out swinging, catcher James M...">
+
+Check swing
