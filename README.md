@@ -6,7 +6,7 @@ The application returns the worst call of the night, every night, chosen as such
 
 ##API Documentation (WORK IN PROGRESS)
 
-Example application using API: www.businessweek.com/graphics/baseballs-worst-call-of-the-day/#/
+Example application using API: [www.umpireauditor.com](http://www.umpireauditor.com)
 
 ####/api/games/date/:year/:month/:day
 
