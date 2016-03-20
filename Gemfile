@@ -54,8 +54,6 @@ gem 'aws-sdk'
 
 #To fix heroku bug
 gem 'execjs'
-gem 'therubyracer'
-
 
 #Set appropriate headers
 gem 'rails-api'
