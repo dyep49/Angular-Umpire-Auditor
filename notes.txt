@@ -94,3 +94,67 @@ Check Swing
 => #<Pitch id: 2400874, gid: "gid_2015_06_13_clemlb_detmlb_1", date_string: "2015-06-13 00:00:00", description: "Called Strike", pid: 81, x_location: 0.759, y_location: 0.994, sz_top: 3.33, sz_bottom: 1.55, sv_id: "150613_163428", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.051, distance_missed_y: 0.556, total_distance_missed: 0.607, pitcher_id: nil, mlb_umpire_id: 427128, batter_id: nil, game_id: 8341, ball_count: 0, strike_count: 1, outs: 0, inning_half: "top", inning: 2, play: "Brandon Moss strikes out swinging, catcher James M...">
 
 Check swing
+
+=> #<Day id: 723, game_date: "2015-06-21 00:00:00", umpire: "Clint Fagan", home_team: "Los Angeles Dodgers", away_team: "San Francisco Giants", total_distance_missed: 4.176, umpire_id: 38, created_at: "2015-06-22 08:05:03", updated_at: "2015-06-22 08:05:03", inning: "2", ball_count: 0, strike_count: 0, outs: 1, inning_half: "bottom", pitch_id: 2436142, play: "Justin Turner singles on a sharp line drive to lef...", img_date: "2015-06-21">
+
+
+=> #<Pitch id: 2437863, gid: "gid_2015_06_22_houmlb_anamlb_1", date_string: "2015-06-22 00:00:00", description: "Called Strike", pid: 122, x_location: -2.235, y_location: 1.903, sz_top: 3.307, sz_bottom: 1.508, sv_id: "150622_194308", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 1.527, distance_missed_y: 0.0, total_distance_missed: 1.527, pitcher_id: nil, mlb_umpire_id: 483630, batter_id: nil, game_id: 8474, ball_count: 0, strike_count: 1, outs: 2, inning_half: "bottom", inning: 2, play: "Daniel Robertson grounds into a force out, shortst...">
+
+=> #<Pitch id: 2440510, gid: "gid_2015_06_23_cinmlb_pitmlb_1", date_string: "2015-06-23 00:00:00", description: "Called Strike", pid: 70, x_location: -3.6, y_location: 4.047, sz_top: 3.86, sz_bottom: 1.79, sv_id: "150623_192618", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 2.892, distance_missed_y: 0.187, total_distance_missed: 3.079, pitcher_id: nil, mlb_umpire_id: 482608, batter_id: nil, game_id: 8483, ball_count: 1, strike_count: 0, outs: 0, inning_half: "bottom", inning: 1, play: "Gregory Polanco called out on strikes.">
+
+=> #<Pitch id: 2491231, gid: "gid_2015_07_06_atlmlb_milmlb_1", date_string: "2015-07-06 00:00:00", description: "Called Strike", pid: 42, x_location: -0.331, y_location: 6.058, sz_top: 3.63, sz_bottom: 1.69, sv_id: "150706_192047", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.0, distance_missed_y: 2.428, total_distance_missed: 2.428, pitcher_id: nil, mlb_umpire_id: 427058, batter_id: nil, game_id: 8661, ball_count: 0, strike_count: 0, outs: 1, inning_half: "top", inning: 1, play: "Pedro Ciriaco reaches on a fielder's choice out, t...">
+
+=> #<Day id: 754, game_date: "2015-07-21 00:00:00", umpire: "Jeff Nelson", home_team: "Detroit Tigers", away_team: "Seattle Mariners", total_distance_missed: 0.586, umpire_id: 64, created_at: "2015-07-23 01:00:19", updated_at: "2015-07-23 01:00:19", inning: "9", ball_count: 0, strike_count: 1, outs: 0, inning_half: "bottom", pitch_id: 2537217, play: "Jefry Marte grounds out, shortstop Brad Miller to ...", img_date: "2015-07-21">
+Swinging strike
+
+=> #<Day id: 759, game_date: "2015-07-25 00:00:00", umpire: "Jeff Nelson", home_team: "Minnesota Twins", away_team: "New York Yankees", total_distance_missed: 0.731, umpire_id: 64, created_at: "2015-07-26 08:04:44", updated_at: "2015-07-26 08:04:44", inning: "6", ball_count: 3, strike_count: 2, outs: 2, inning_half: "bottom", pitch_id: 2553037, play: "Aaron Hicks called out on strikes.", img_date: "2015-07-25">
+swinginstrike
+
+=> #<Pitch id: 2586778, gid: "gid_2015_08_03_arimlb_wasmlb_1", date_string: "2015-08-03 00:00:00", description: "Called Strike", pid: 298, x_location: -1.274, y_location: 1.179, sz_top: 3.61, sz_bottom: 1.6, sv_id: "150803_203001", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.566, distance_missed_y: 0.421, total_distance_missed: 0.987, pitcher_id: nil, mlb_umpire_id: 427192, batter_id: nil, game_id: 9001, ball_count: 0, strike_count: 1, outs: 1, inning_half: "bottom", inning: 5, play: "Nationals challenged (force play), call on the fie...">
+
+=> #<Pitch id: 2591843, gid: "gid_2015_08_04_kcamlb_detmlb_1", date_string: "2015-08-04 00:00:00", description: "Called Strike", pid: 439, x_location: -1.972, y_location: 1.958, sz_top: 3.56, sz_bottom: 1.64, sv_id: "150804_211533", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 1.264, distance_missed_y: 0.0, total_distance_missed: 1.264, pitcher_id: nil, mlb_umpire_id: 427533, batter_id: nil, game_id: 9018, ball_count: 0, strike_count: 0, outs: 2, inning_half: "bottom", inning: 7, play: "Rajai Davis lines out to third baseman Mike Mousta...">
+
+Ball but not that bad
+
+=> #<Pitch id: 2616742, gid: "gid_2015_08_10_wasmlb_lanmlb_1", date_string: "2015-08-10 00:00:00", description: "Called Strike", pid: 410, x_location: -1.342, y_location: 3.139, sz_top: 3.22, sz_bottom: 1.6, sv_id: "150810_205714", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.634, distance_missed_y: 0.0, total_distance_missed: 0.634, pitcher_id: nil, mlb_umpire_id: 427457, batter_id: nil, game_id: 9103, ball_count: 0, strike_count: 0, outs: 0, inning_half: "top", inning: 7, play: "Bryce Harper strikes out swinging.">
+Swinging strike
+
+=> #<Pitch id: 2627390, gid: "gid_2015_08_13_oakmlb_tormlb_1", date_string: "2015-08-13 00:00:00", description: "Called Strike", pid: 498, x_location: -1.391, y_location: 2.481, sz_top: 3.19, sz_bottom: 1.51, sv_id: "150813_150245", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.683, distance_missed_y: 0.0, total_distance_missed: 0.683, pitcher_id: nil, mlb_umpire_id: 427366, batter_id: nil, game_id: 9139, ball_count: 1, strike_count: 1, outs: 2, inning_half: "top", inning: 9, play: "Coco Crisp lines out to right fielder Jose Bautist...">
+Swinging strike
+
+=> #<Pitch id: 2635211, gid: "gid_2015_08_15_phimlb_milmlb_1", date_string: "2015-08-15 00:00:00", description: "Called Strike", pid: 435, x_location: -1.815, y_location: 4.778, sz_top: 3.82, sz_bottom: 1.8, sv_id: "150815_203355", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 1.107, distance_missed_y: 0.958, total_distance_missed: 2.065, pitcher_id: nil, mlb_umpire_id: 484499, batter_id: nil, game_id: 9167, ball_count: 1, strike_count: 2, outs: 2, inning_half: "bottom", inning: 7, play: "Shane Peterson called out on strikes.">
+bad data
+
+=> #<Pitch id: 2635212, gid: "gid_2015_08_15_phimlb_milmlb_1", date_string: "2015-08-15 00:00:00", description: "Called Strike", pid: 443, x_location: 0.603, y_location: 0.992, sz_top: 3.44, sz_bottom: 1.61, sv_id: "150815_203508", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.0, distance_missed_y: 0.618, total_distance_missed: 0.618, pitcher_id: nil, mlb_umpire_id: 484499, batter_id: nil, game_id: 9167, ball_count: 0, strike_count: 0, outs: 0, inning_half: "top", inning: 8, play: "Ryan Howard singles on a line drive to left fielde...">
+bad data
+
+=> #<Pitch id: 2646064, gid: "gid_2015_08_18_lanmlb_oakmlb_1", date_string: "2015-08-18 00:00:00", description: "Called Strike", pid: 184, x_location: -1.428, y_location: 3.349, sz_top: 3.36, sz_bottom: 1.5, sv_id: "150818_200004", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.72, distance_missed_y: 0.0, total_distance_missed: 0.72, pitcher_id: nil, mlb_umpire_id: 429805, batter_id: nil, game_id: 9204, ball_count: 1, strike_count: 0, outs: 2, inning_half: "bottom", inning: 3, play: "Josh Phegley strikes out swinging.">
+bad data
+
+=> #<Pitch id: 2659752, gid: "gid_2015_08_21_tbamlb_oakmlb_1", date_string: "2015-08-21 00:00:00", description: "Called Strike", pid: 523, x_location: 0.056, y_location: 0.763, sz_top: 3.39, sz_bottom: 1.74, sv_id: "150821_214434", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.0, distance_missed_y: 0.977, total_distance_missed: 0.977, pitcher_id: nil, mlb_umpire_id: 427224, batter_id: nil, game_id: 9251, ball_count: 1, strike_count: 0, outs: 2, inning_half: "top", inning: 9, play: "Curt Casali strikes out swinging, catcher Josh Phe...">
+bad data
+
+8/21 replacement might be wrong
+
+=> #<Pitch id: 2681660, gid: "gid_2015_08_27_chnmlb_sfnmlb_1", date_string: "2015-08-27 00:00:00", description: "Called Strike", pid: 46, x_location: -0.114, y_location: 0.959, sz_top: 3.54, sz_bottom: 1.62, sv_id: "150827_125904", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.0, distance_missed_y: 0.661, total_distance_missed: 0.661, pitcher_id: nil, mlb_umpire_id: 427058, batter_id: nil, game_id: 9326, ball_count: 1, strike_count: 0, outs: 2, inning_half: "bottom", inning: 1, play: "Brandon Belt pops out to second baseman Starlin Ca...">
+irb(main):002:0> 
+Check swing
+
+=> #<Pitch id: 2694682, gid: "gid_2015_08_30_houmlb_minmlb_1", date_string: "2015-08-30 00:00:00", description: "Called Strike", pid: 148, x_location: -0.996, y_location: 6.512, sz_top: 3.38, sz_bottom: 1.49, sv_id: "150830_140229", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.288, distance_missed_y: 3.132, total_distance_missed: 3.42, pitcher_id: nil, mlb_umpire_id: 483919, batter_id: nil, game_id: 9372, ball_count: 0, strike_count: 0, outs: 2, inning_half: "bottom", inning: 2, play: "Brian Dozier grounds out, shortstop Marwin Gonzale...">
+Bad data
+
+=> #<Pitch id: 2695540, gid: "gid_2015_08_30_nyamlb_atlmlb_1", date_string: "2015-08-30 00:00:00", description: "Called Strike", pid: 157, x_location: -1.737, y_location: 2.724, sz_top: 3.47, sz_bottom: 1.61, sv_id: "150830_142725", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 1.029, distance_missed_y: 0.0, total_distance_missed: 1.029, pitcher_id: nil, mlb_umpire_id: 427224, batter_id: nil, game_id: 9375, ball_count: 0, strike_count: 0, outs: 1, inning_half: "top", inning: 3, play: "Brian McCann flies out to center fielder Michael B...">
+not a bad pitch
+
+=> #<Pitch id: 2695551, gid: "gid_2015_08_30_nyamlb_atlmlb_1", date_string: "2015-08-30 00:00:00", description: "Called Strike", pid: 174, x_location: 1.155, y_location: 3.974, sz_top: 3.4, sz_bottom: 1.61, sv_id: "150830_143105", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.447, distance_missed_y: 0.574, total_distance_missed: 1.021, pitcher_id: nil, mlb_umpire_id: 427224, batter_id: nil, game_id: 9375, ball_count: 1, strike_count: 0, outs: 2, inning_half: "top", inning: 3, play: "Chase Headley homers (10) on a fly ball to center ...">
+
+fucked up inning
+
+=> #<Day id: 868, game_date: "2015-09-27 00:00:00", umpire: "Marvin Hudson", home_team: "Los Angeles Angels", away_team: "Seattle Mariners", total_distance_missed: 1.834, umpire_id: 33, created_at: "2015-09-28 08:06:02", updated_at: "2015-09-28 08:06:02", inning: "5", ball_count: 0, strike_count: 0, outs: 0, inning_half: "bottom", pitch_id: 2809060, play: "David Freese homers (13) on a fly ball to right ce...", img_date: "2015-09-27">
+
+=> #<Pitch id: 2815966, gid: "gid_2015_09_29_oakmlb_anamlb_1", date_string: "2015-09-29 00:00:00", description: "Called Strike", pid: 451, x_location: 1.297, y_location: 0.924, sz_top: 3.45, sz_bottom: 1.61, sv_id: "150929_211910", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.589, distance_missed_y: 0.686, total_distance_missed: 1.275, pitcher_id: nil, mlb_umpire_id: 503586, batter_id: nil, game_id: 9813, ball_count: 1, strike_count: 0, outs: 1, inning_half: "top", inning: 7, play: "Stephen Vogt grounds out, second baseman Johnny Gi...">
+wrong
+
+=> #<Pitch id: 2815916, gid: "gid_2015_09_29_oakmlb_anamlb_1", date_string: "2015-09-29 00:00:00", description: "Called Strike", pid: 354, x_location: -1.901, y_location: 2.955, sz_top: 3.39, sz_bottom: 1.53, sv_id: "150929_205056", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 1.193, distance_missed_y: 0.0, total_distance_missed: 1.193, pitcher_id: nil, mlb_umpire_id: 503586, batter_id: nil, game_id: 9813, ball_count: 0, strike_count: 0, outs: 2, inning_half: "bottom", inning: 5, play: "David Freese singles on a ground ball to right fie...">
+
+October 21 2015 away team is wrong royals blue jays
