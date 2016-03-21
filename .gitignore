@@ -21,3 +21,5 @@
 
 #Postgres backups
 *.dump
+
+*.scratch
