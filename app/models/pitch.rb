@@ -38,7 +38,7 @@ class Pitch < ActiveRecord::Base
 	end
 
 	def total_miss
-		total_distance_missed = self.y_miss + self.x_miss
+    total_distance_missed = Math.sqrt(self.y_miss ** 2 + self.x_miss ** 2)
 	end
 
 end
