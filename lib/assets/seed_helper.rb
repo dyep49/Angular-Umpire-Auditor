@@ -168,7 +168,7 @@ module SeedHelper
 
 	    new_pitch = Pitch.new(pitch_attrs)
 
-	    if judgeable?(new_pitch)
+	    if judgeable?(new_pitch) && !missing_data?(new_pitch)
 	      new_pitch.correct_call = new_pitch.correct_call?
 	      calculate_miss(new_pitch) if new_pitch.description == "Called Strike"
 	    end
@@ -191,6 +191,10 @@ module SeedHelper
 	  pitch.total_distance_missed = pitch.total_miss
 	end
 
+  def self.missing_data?(pitch)
+    pitch[:missing_data] == true
+  end
+
 	def self.judgeable?(pitch)
 	  pitch.sz_top && (pitch.description == "Called Strike" || pitch.description == "Ball")
 	end
@@ -206,7 +210,7 @@ module SeedHelper
 
 	def self.parse_pitch(pitch)
 	  begin
-	    {
+	    new_pitch = {
 	      description: pitch["des"],
 	      pid: pitch["id"],
 	      x_location: pitch["px"],
@@ -217,6 +221,12 @@ module SeedHelper
 	      type_id: pitch["type"],
 	      missing_data: false
 	    }
+
+      if new_pitch.reject{|k,v| !v.nil? }.size > 0
+        new_pitch[:missing_data] = true
+      end
+
+      new_pitch
 	  rescue Exception => e
 	    puts e.message
 	    puts e.backtrace.inspect
