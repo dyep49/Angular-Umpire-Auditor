@@ -1,5 +1,4 @@
 AngularUmpireAuditor::Application.configure do
-  ENV["DATABASE_URL"] = "postgres://hzcdojlhliyhbm:AMcXiva19wKNtA8oAJ77reLcZu@ec2-107-20-191-205.compute-1.amazonaws.com:5432/d8n7msm0k6snkl"
   # Settings specified here will take precedence over those in config/application.rb.
   config.cache_store = :redis_store, ENV["REDISTOGO_URL"], { expires_in: 1.year }
   # Code is not reloaded between requests.
