@@ -95,4 +95,12 @@ swing
 
 => #<Pitch id: 4140061, gid: "gid_2017_09_06_sfnmlb_colmlb_1", date_string: "2017-09-06 00:00:00", description: "Called Strike", pid: 303, x_location: 1.64309968317429, y_location: 0.685085781148859, sz_top: 3.319, sz_bottom: 1.513, sv_id: "170907_021247", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.935, distance_missed_y: 0.828, total_distance_missed: 1.2489231361457, pitcher_id: nil, mlb_umpire_id: 484198, batter_id: nil, game_id: 14559, ball_count: 0, strike_count: 0, outs: 0, inning_half: "bottom", inning: 4, play: "Gerardo Parra grounds out, pitcher Johnny Cueto to...">
 
-test
+=> #<Pitch id: 4160669, gid: "gid_2017_09_12_atlmlb_wasmlb_1", date_string: "2017-09-12 00:00:00", description: "Called Strike", pid: 25, x_location: -6.03248850031524, y_location: -3.51364665398366, sz_top: 3.575, sz_bottom: 1.681, sv_id: "170912_231032", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 5.324, distance_missed_y: 5.195, total_distance_missed: 7.43861552978778, pitcher_id: nil, mlb_umpire_id: 427299, batter_id: nil, game_id: 14628, ball_count: 0, strike_count: 0, outs: 1, inning_half: "top", inning: 1, play: "Freddie Freeman strikes out swinging.  Ozzie Albie...">
+
+I'm like 90% sure this isn't outside at all but it's not super egregious
+=> #<Pitch id: 4170233, gid: "gid_2017_09_14_chamlb_detmlb_1", date_string: "2017-09-14 00:00:00", description: "Called Strike", pid: 443, x_location: -1.25693173120796, y_location: 2.6289571641087, sz_top: 3.549, sz_bottom: 1.627, sv_id: "170914_191434", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.549, distance_missed_y: 0.0, total_distance_missed: 0.549, pitcher_id: nil, mlb_umpire_id: 503586, batter_id: nil, game_id: 14660, ball_count: 0, strike_count: 0, outs: 0, inning_half: "bottom", inning: 6, play: "Nicholas Castellanos strikes out swinging.">
+
+sz top is lower than sz bottom
+=> #<Pitch id: 4201273, gid: "gid_2017_09_22_colmlb_sdnmlb_1", date_string: "2017-09-22 00:00:00", description: "Called Strike", pid: 39, x_location: 0.981988238959172, y_location: 2.63972088977805, sz_top: 1.93953834483857, sz_bottom: 3.14805429932285, sv_id: "170923_022345", type_id: "S", missing_data: false, correct_call: false, distance_missed_x: 0.274, distance_missed_y: 0.7, total_distance_missed: 0.751715371666697, pitcher_id: nil, mlb_umpire_id: 482620, batter_id: nil, game_id: 14767, ball_count: 1, strike_count: 2, outs: 2, inning_half: "bottom", inning: 1, play: "Wil Myers called out on strikes.">
+
+
