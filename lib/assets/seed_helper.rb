@@ -161,25 +161,27 @@ module SeedHelper
 	  ball_count = 0
 	  strike_count = 0
 
-	  pitches.each do |pitch|
-	    pitch_attrs = parse_pitch(pitch)
-	    pitch_attrs[:ball_count] = ball_count
-	    pitch_attrs[:strike_count] = strike_count
+    if pitches
+      pitches.each do |pitch|
+        pitch_attrs = parse_pitch(pitch)
+        pitch_attrs[:ball_count] = ball_count
+        pitch_attrs[:strike_count] = strike_count
 
-	    new_pitch = Pitch.new(pitch_attrs)
+        new_pitch = Pitch.new(pitch_attrs)
 
-	    if judgeable?(new_pitch) && !missing_data?(new_pitch)
-	      new_pitch.correct_call = new_pitch.correct_call?
-	      calculate_miss(new_pitch) if new_pitch.description == "Called Strike"
-	    end
+        if judgeable?(new_pitch) && !missing_data?(new_pitch)
+          new_pitch.correct_call = new_pitch.correct_call?
+          calculate_miss(new_pitch) if new_pitch.description == "Called Strike"
+        end
 
-	    updated_count = update_count({ball_count: ball_count, strike_count: strike_count, type: pitch_attrs[:type_id]})
-	    ball_count = updated_count[:ball_count]
-	    strike_count = updated_count[:strike_count]
+        updated_count = update_count({ball_count: ball_count, strike_count: strike_count, type: pitch_attrs[:type_id]})
+        ball_count = updated_count[:ball_count]
+        strike_count = updated_count[:strike_count]
 
-	    new_pitch.save!
-	    pitch_array << new_pitch
-	  end
+        new_pitch.save!
+        pitch_array << new_pitch
+      end
+    end
 
 
 	  pitch_array
